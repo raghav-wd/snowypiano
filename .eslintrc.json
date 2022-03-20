@@ -22,6 +22,6 @@
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
-        "semi": 2
+        "semi": ["error", "never"]
     }
 }
