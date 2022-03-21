@@ -1,12 +1,9 @@
 import { FunctionComponent } from 'react'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import WholeNote from '../assets/notation/WholeNote'
-
-const config = {
-  lineThickness: 2,
-  size: 56,
-  color: 'black',
-}
+import { State } from '../store'
+import { ClefConfig } from '../types'
 
 type NoteProps = {
   h?: number
@@ -15,19 +12,38 @@ type NoteProps = {
 type NoteContainerProps = {
   row: number
   col: number
+  clefConfig: ClefConfig
 }
 
 const NoteContainer = styled.div<NoteContainerProps>`
   position: absolute;
-  top: ${(props) => (config.size / 2) * props.row + props.row}px;
-  left: ${5 * 1}vw;
+  top: ${(props) =>
+    (props.clefConfig.notationSize / 2) * props.row +
+    props.row -
+    props.clefConfig.notationSize / 2}px;
+  left: ${(props) => (props.col / 12) * 96}vw;
 `
 
 const Note: FunctionComponent<NoteProps> = () => {
+  const theme = useSelector((state: State) => state.theme)
+  const clefConfig = useSelector((state: State) => state.clefConfig)
   return (
-    <NoteContainer row={4} col={1}>
-      <WholeNote color="black" size={config.size} thickness={config.lineThickness} />
-    </NoteContainer>
+    <>
+      <NoteContainer row={2} col={1} clefConfig={clefConfig}>
+        <WholeNote
+          color={theme.notation}
+          size={clefConfig.notationSize}
+          thickness={clefConfig.lineThinkness}
+        />
+      </NoteContainer>
+      <NoteContainer row={5} col={0} clefConfig={clefConfig}>
+        <WholeNote
+          color={theme.notation}
+          size={clefConfig.notationSize}
+          thickness={clefConfig.lineThinkness}
+        />
+      </NoteContainer>
+    </>
   )
 }
 
