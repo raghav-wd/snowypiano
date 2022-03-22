@@ -10,7 +10,16 @@ function App() {
   const { changeTheme } = bindActionCreators(actionCreators, dispatch)
 
   useEffect(() => {
-    // changeTheme('blue')
+    // changeTheme({
+    //   notation: '#fff',
+    //   line: '#789395',
+    //   clef: '#B4CFB0',
+    //   ledger: {
+    //     color: 'blue',
+    //     length: 64,
+    //     thickness: 4,
+    //   },
+    // })
   }, [])
 
   return (

@@ -4,21 +4,17 @@ import { State } from '../store'
 import { ClefConfig } from '../types'
 import Note from './Note'
 
-const config = {
-  lineThickness: 2,
-  gap: 56,
-  color: 'black',
-}
-
 type LineProps = {
   hide?: boolean
   clefConfig: ClefConfig
 }
 
 const Line = styled.div<LineProps>`
-  background-color: ${(props) => props.color};
+  box-sizing: border-box;
+  /* background-color: ${(props) => props.color}; */
+  border-top: ${(props) => props.clefConfig.lineThinkness}px solid ${(props) => props.color};
   width: 100%;
-  height: ${(props) => props.clefConfig.lineThinkness}px;
+  /* height: ${(props) => props.clefConfig.lineThinkness}px; */
   margin-bottom: ${(props) => props.clefConfig.lineSpace}px;
 `
 
@@ -35,22 +31,20 @@ function Clef() {
   const theme = useSelector((state: State) => state.theme)
   const clefConfig = useSelector((state: State) => state.clefConfig)
   return (
-    <div>
-      <ClefLines className="cleffstaff h-4/6">
-        <Line clefConfig={clefConfig} color={theme.clef} hide />
-        <Line clefConfig={clefConfig} color={theme.clef} hide />
-        <Line clefConfig={clefConfig} color={theme.line} />
-        <Line clefConfig={clefConfig} color={theme.line} />
-        <Line clefConfig={clefConfig} color={theme.line} />
-        <Line clefConfig={clefConfig} color={theme.line} />
-        <Line clefConfig={clefConfig} color={theme.line} />
-        <Line clefConfig={clefConfig} color={theme.clef} hide />
-        <Line clefConfig={clefConfig} color={theme.clef} hide />
-        <Notations>
-          <Note />
-        </Notations>
-      </ClefLines>
-    </div>
+    <ClefLines className="cleffstaff h-4/6">
+      <Line clefConfig={clefConfig} color={theme.clef} hide />
+      <Line clefConfig={clefConfig} color={theme.clef} hide />
+      <Line clefConfig={clefConfig} color={theme.line} />
+      <Line clefConfig={clefConfig} color={theme.line} />
+      <Line clefConfig={clefConfig} color={theme.line} />
+      <Line clefConfig={clefConfig} color={theme.line} />
+      <Line clefConfig={clefConfig} color={theme.line} />
+      <Line clefConfig={clefConfig} color={theme.clef} hide />
+      <Line clefConfig={clefConfig} color={theme.clef} hide />
+      <Notations>
+        <Note />
+      </Notations>
+    </ClefLines>
   )
 }
 
