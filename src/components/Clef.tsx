@@ -1,21 +1,22 @@
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { State } from '../store'
-import { ClefConfig } from '../types'
+import { ClefType } from '../types'
 import Note from './Note'
 
 type LineProps = {
   hide?: boolean
-  clefConfig: ClefConfig
+  state: ClefType
 }
 
 const Line = styled.div<LineProps>`
   box-sizing: border-box;
   /* background-color: ${(props) => props.color}; */
-  border-top: ${(props) => props.clefConfig.lineThinkness}px solid ${(props) => props.color};
+  border-top: ${(props) => props.state.lineThinkness}px solid
+    ${(props) => (props.hide ? 'white' : props.state.lineColor)};
   width: 100%;
-  /* height: ${(props) => props.clefConfig.lineThinkness}px; */
-  margin-bottom: ${(props) => props.clefConfig.lineSpace}px;
+  /* height: ${(props) => props.state.lineThinkness}px; */
+  margin-bottom: ${(props) => props.state.lineSpace}px;
 `
 
 const ClefLines = styled.div`
@@ -28,19 +29,18 @@ const Notations = styled.div`
 `
 
 function Clef() {
-  const theme = useSelector((state: State) => state.theme)
-  const clefConfig = useSelector((state: State) => state.clefConfig)
+  const clefState = useSelector((state: State) => state.root.theme.clef)
   return (
     <ClefLines className="cleffstaff h-4/6">
-      <Line clefConfig={clefConfig} color={theme.clef} hide />
-      <Line clefConfig={clefConfig} color={theme.clef} hide />
-      <Line clefConfig={clefConfig} color={theme.line} />
-      <Line clefConfig={clefConfig} color={theme.line} />
-      <Line clefConfig={clefConfig} color={theme.line} />
-      <Line clefConfig={clefConfig} color={theme.line} />
-      <Line clefConfig={clefConfig} color={theme.line} />
-      <Line clefConfig={clefConfig} color={theme.clef} hide />
-      <Line clefConfig={clefConfig} color={theme.clef} hide />
+      <Line state={clefState} hide />
+      <Line state={clefState} hide />
+      <Line state={clefState} />
+      <Line state={clefState} />
+      <Line state={clefState} />
+      <Line state={clefState} />
+      <Line state={clefState} />
+      <Line state={clefState} hide />
+      <Line state={clefState} hide />
       <Notations>
         <Note />
       </Notations>

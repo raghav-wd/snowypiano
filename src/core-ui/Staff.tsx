@@ -1,20 +1,25 @@
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Clef from '../components/Clef'
 import { State } from '../store'
+import { ClefType } from '../types'
 
 type ClefProps = {
-  Clef: string
+  state: ClefType
 }
 
 const StaffComp = styled.div<ClefProps>`
-  background-color: ${(props) => props.Clef};
+  background-color: ${(props) => props.state.color};
 `
 
 function Staff() {
-  const theme = useSelector((state: State) => state.theme)
+  const state = useSelector((state: State) => state.root)
+  useEffect(() => {
+    console.log(state)
+  }, [])
   return (
-    <StaffComp Clef={theme.clef}>
+    <StaffComp state={state.theme.clef}>
       <Clef />
     </StaffComp>
   )

@@ -1,10 +1,9 @@
 import { combineReducers } from "redux"
-import clefReducer from "./clefReducer"
-import themeReducer from "./themeReducer"
+// import clefReducer from "./clefReducer"
+import rootReducer from "./rootReducer"
 
 export const reducers = combineReducers({
-    theme: themeReducer,
-    clefConfig: clefReducer
+    root: rootReducer,
 })
 
 export type State = ReturnType<typeof reducers>

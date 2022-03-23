@@ -1,22 +1,21 @@
 import { Dispatch } from "redux"
-import { ClefConfig, ThemeState } from "../../types"
-import { ClefConfigActionType } from "../action-types"
-import { Action, ClefConfigAction } from "../actions/index"
+import { RootState } from "../../types"
+import { Action } from "../actions/index"
 
-export const changeTheme = (theme: ThemeState) => {
+export const changeTheme = (rootState: RootState) => {
     return (dispatch: Dispatch<Action>) => {
         dispatch({
             type: 'light',
-            payload: theme,
+            payload: rootState,
         })
     }
 }
 
-export const changeClefConfig = (clefConfig: ClefConfig) => {
-    return (dispatch: Dispatch<ClefConfigAction>) => {
-        dispatch({
-            type: ClefConfigActionType.DEFAULT,
-            payload: clefConfig,
-        })
-    }
-}
+// export const changeClefConfig = (clefConfig: ClefConfig) => {
+//     return (dispatch: Dispatch<ClefConfigAction>) => {
+//         dispatch({
+//             type: ClefConfigActionType.DEFAULT,
+//             payload: clefConfig,
+//         })
+//     }
+// }

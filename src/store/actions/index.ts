@@ -1,13 +1,13 @@
-import { ClefConfig, ThemeState } from "../../types";
+import { RootState } from "../../types";
 
 interface Action {
     type: string,
-    payload: ThemeState,
+    payload: RootState,
 }
 
-type ClefConfigAction = {
-    type: string,
-    payload: ClefConfig
-}
+// type ClefConfigAction = {
+//     type: string,
+//     payload: ClefConfig
+// }
 
-export type { Action, ClefConfigAction }
+export type { Action }
