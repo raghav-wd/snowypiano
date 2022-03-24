@@ -1,8 +1,9 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import Crotchet from '../assets/notes/Crotchet'
 import WholeNote from '../assets/notes/WholeNote'
+import { useRandomNotes } from '../hooks/useRandomNotes'
 import { State } from '../store'
 import { NoteType } from '../types'
 
@@ -25,21 +26,17 @@ const NoteContainer = styled.div<NoteContainerProps>`
 
 const NoteComp: FunctionComponent<NoteProps> = () => {
   const note = useSelector((state: State) => state.root.theme.note)
+  const arr = useRandomNotes()
+  useEffect(() => {
+    console.log(arr)
+  }, [])
   return (
     <>
-      <NoteContainer row={1} col={1} state={note}>
-        {/* <WholeNote state={note} /> */}
-      </NoteContainer>
-      <NoteContainer row={11} col={2} state={note}>
-        <Crotchet />
-        {/* <WholeNote state={note} /> */}
-      </NoteContainer>
-      <NoteContainer row={5} col={3} state={note}>
-        <Crotchet />
-      </NoteContainer>
-      <NoteContainer row={8} col={1} state={note}>
-        <Crotchet />
-      </NoteContainer>
+      {arr.map((noteItem) => (
+        <NoteContainer row={noteItem.row} col={noteItem.col} state={note} key={noteItem.col}>
+          <Crotchet />
+        </NoteContainer>
+      ))}
     </>
   )
 }

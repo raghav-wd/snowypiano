@@ -20,7 +20,7 @@ const initialState: RootState = {
             lineSpace: 32,
             lineThinkness: 2,
             lineColor: 'black',
-            color: 'white'
+            color: 'orange'
         },
         visualizer: {
             color: 'black',
