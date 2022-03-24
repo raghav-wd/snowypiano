@@ -15,9 +15,6 @@ const StaffComp = styled.div<ClefProps>`
 
 function Staff() {
   const state = useSelector((state: State) => state.root)
-  useEffect(() => {
-    console.log(state)
-  }, [])
   return (
     <StaffComp state={state.theme.clef}>
       <Clef />

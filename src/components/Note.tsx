@@ -27,9 +27,6 @@ const NoteContainer = styled.div<NoteContainerProps>`
 const NoteComp: FunctionComponent<NoteProps> = () => {
   const note = useSelector((state: State) => state.root.theme.note)
   const arr = useRandomNotes()
-  useEffect(() => {
-    console.log(arr)
-  }, [])
   return (
     <>
       {arr.map((noteItem) => (
