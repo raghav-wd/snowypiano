@@ -13,11 +13,11 @@ const initialState: RootState = {
         },
         note: {
             color: 'black',
-            size: 48
+            size: 32
         },
         clef: {
             size: 0,
-            lineSpace: 48,
+            lineSpace: 32,
             lineThinkness: 2,
             lineColor: 'black',
             color: 'white'

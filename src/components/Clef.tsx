@@ -11,11 +11,9 @@ type LineProps = {
 
 const Line = styled.div<LineProps>`
   box-sizing: border-box;
-  /* background-color: ${(props) => props.color}; */
   border-top: ${(props) => props.state.lineThinkness}px solid
-    ${(props) => (props.hide ? 'white' : props.state.lineColor)};
+    ${(props) => (props.hide ? props.state.color : props.state.lineColor)};
   width: 100%;
-  /* height: ${(props) => props.state.lineThinkness}px; */
   margin-bottom: ${(props) => props.state.lineSpace}px;
 `
 
