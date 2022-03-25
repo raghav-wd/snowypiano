@@ -1,8 +1,13 @@
-import { RootState } from "../../types";
+import { NotePositionType, RootState } from "../../types";
 
 interface Action {
     type: string,
     payload: RootState,
+}
+
+interface RandNoteAction {
+    type: string,
+    payload: NotePositionType[]
 }
 
 // type ClefConfigAction = {
@@ -10,4 +15,4 @@ interface Action {
 //     payload: ClefConfig
 // }
 
-export type { Action }
+export type { Action, RandNoteAction }
