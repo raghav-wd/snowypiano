@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect } from 'react'
+import { FunctionComponent, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import styled from 'styled-components'
@@ -31,14 +31,21 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
 
   const dispatch = useDispatch()
   const { addNote } = bindActionCreators(actionCreators, dispatch)
+  const addRandNotes: any = useRef()
   useEffect(() => {
-    // for (let i = 1; i <= 12; i++) {
-    //   const uuid = uuidv4()
-    //   const note: NotePositionType = { row: Math.round(Math.random() * 16), col: i, uuid }
-    //   addNote([note])
-    // }
-    addNote([{ row: 10, col: 13, uuid: uuidv4() }])
+    for (let i = 1; i <= 12; i++) {
+      const uuid = uuidv4()
+      const note: NotePositionType = { row: Math.round(Math.random() * 16), col: i, uuid }
+      addNote([note])
+    }
+
+    // generates random notes
+    addRandNotes.current = setInterval(
+      () => addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4() }]),
+      1500,
+    )
   }, [])
+
   return (
     <>
       {noteState.map((noteItem) => (

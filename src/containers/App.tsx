@@ -9,7 +9,7 @@ import { actionCreators } from '../store'
 function App() {
   const dispatch = useDispatch()
   const { changeTheme } = bindActionCreators(actionCreators, dispatch)
-  // useMidi()
+  useMidi()
   return (
     <>
       <MainLayout visualizerMode={true} />

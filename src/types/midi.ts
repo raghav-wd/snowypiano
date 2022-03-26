@@ -5,3 +5,9 @@ export type MidiConnectionEvent = {
     connection: string
     state: 'connected' | 'disconnected'
 }
+
+export type MidiMessageData = {
+    command: number
+    note: number
+    velocity: number
+}
