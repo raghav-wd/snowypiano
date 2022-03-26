@@ -6,6 +6,7 @@ import Crotchet from '../assets/notes/Crotchet'
 import WholeNote from '../assets/notes/WholeNote'
 import { actionCreators, State } from '../store'
 import { NotePositionType, NoteType } from '../types'
+import { v4 as uuidv4 } from 'uuid'
 
 type NoteProps = {
   h?: number
@@ -31,19 +32,17 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
   const dispatch = useDispatch()
   const { addNote } = bindActionCreators(actionCreators, dispatch)
   useEffect(() => {
-    for (let i = 1; i <= 12; i++) {
-      const note: NotePositionType = { row: Math.round(Math.random() * 16), col: i }
-      addNote([note])
-    }
+    // for (let i = 1; i <= 12; i++) {
+    //   const uuid = uuidv4()
+    //   const note: NotePositionType = { row: Math.round(Math.random() * 16), col: i, uuid }
+    //   addNote([note])
+    // }
+    addNote([{ row: 10, col: 13, uuid: uuidv4() }])
   }, [])
   return (
     <>
       {noteState.map((noteItem) => (
-        <NoteContainer
-          row={noteItem.row}
-          col={noteItem.col}
-          state={note}
-          key={Math.round(Math.random() * 1000)}>
+        <NoteContainer row={noteItem.row} col={noteItem.col} state={note} key={noteItem.uuid}>
           <Crotchet />
         </NoteContainer>
       ))}

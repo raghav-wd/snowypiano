@@ -57,5 +57,6 @@ export type colorScheme = {
 export type NotePositionType = {
     col: number
     row: number
+    uuid: string
 }
 
