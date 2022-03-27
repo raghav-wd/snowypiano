@@ -11,3 +11,8 @@ export type MidiMessageData = {
     note: number
     velocity: number
 }
+
+export type NotePressedState = {
+    note: string
+    uuid: string
+}

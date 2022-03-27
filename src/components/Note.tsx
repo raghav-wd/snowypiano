@@ -7,6 +7,7 @@ import WholeNote from '../assets/notes/WholeNote'
 import { actionCreators, State } from '../store'
 import { NotePositionType, NoteType } from '../types'
 import { v4 as uuidv4 } from 'uuid'
+import { useCaret } from '../hooks/useCaret'
 
 type NoteProps = {
   h?: number
@@ -38,13 +39,14 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
       const note: NotePositionType = { row: Math.round(Math.random() * 16), col: i, uuid }
       addNote([note])
     }
-
     // generates random notes
-    addRandNotes.current = setInterval(
-      () => addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4() }]),
-      1500,
-    )
+    // addRandNotes.current = setInterval(
+    //   () => addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4() }]),
+    //   1500,
+    // )
+    // addNote([{ row: 8, col: 0, uuid: uuidv4() }])
   }, [])
+  useCaret()
 
   return (
     <>

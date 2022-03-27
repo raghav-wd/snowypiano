@@ -12,15 +12,15 @@ const initialState: RootState = {
             thickness: 4,
         },
         note: {
-            color: 'white',
+            color: 'black',
             size: 48
         },
         clef: {
             size: 0,
             lineSpace: 48,
             lineThinkness: 2,
-            lineColor: 'white',
-            color: 'black'
+            lineColor: 'black',
+            color: 'cyan'
         },
         visualizer: {
             color: 'black',
