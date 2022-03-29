@@ -31,14 +31,20 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
   const noteState = useSelector((state: State) => state.randNotes)
 
   const dispatch = useDispatch()
-  const { addNote } = bindActionCreators(actionCreators, dispatch)
+  const { addNote, wrongNote } = bindActionCreators(actionCreators, dispatch)
   const addRandNotes: any = useRef()
   useEffect(() => {
     for (let i = 1; i <= 12; i++) {
       const uuid = uuidv4()
-      const note: NotePositionType = { row: Math.round(Math.random() * 16), col: i, uuid }
+      const note: NotePositionType = {
+        row: Math.round(Math.random() * 16),
+        col: i,
+        uuid,
+        class: '',
+      }
       addNote([note])
     }
+    // const n = noteState ? noteState : []
     // generates random notes
     // addRandNotes.current = setInterval(
     //   () => addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4() }]),
@@ -50,9 +56,9 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
 
   return (
     <>
-      {noteState.map((noteItem) => (
+      {noteState!.map((noteItem) => (
         <NoteContainer row={noteItem.row} col={noteItem.col} state={note} key={noteItem.uuid}>
-          <Crotchet />
+          <Crotchet class={noteItem.class} />
         </NoteContainer>
       ))}
     </>

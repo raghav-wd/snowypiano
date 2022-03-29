@@ -8,11 +8,11 @@ import { v4 as uuidv4 } from 'uuid'
 
 export const useCaret = () => {
     const noteState = useSelector((state: State) => state.randNotes)
-    const caretNote = noteState[0]
+    const caretNote = noteState![0]
     const dispatch = useDispatch()
-    const { addNote } = bindActionCreators(actionCreators, dispatch)
+    const { addNote, wrongNote } = bindActionCreators(actionCreators, dispatch)
 
-    const [notePressed, notePressedUuid] = useMidi()
+    const [notePressed, notePressedUuid, isKeyDown] = useMidi()
 
     useEffect(() => {
         if(caretNote)
@@ -20,12 +20,12 @@ export const useCaret = () => {
     }, [caretNote])
 
     useEffect(() => {
-        if(caretNote && getNote(caretNote.row).charAt(0) == notePressed.charAt(0))
-            addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4() }])
-        else
-            console.log('Wrong Note!')
-    }, [notePressed])
+        if( isKeyDown && caretNote)
+            if(getNote(caretNote.row).charAt(0) == notePressed.charAt(0))
+                addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4(), class: '' }])
+            else
+                wrongNote(noteState)
+    }, [isKeyDown])
 }
-
 
 const getNote = (row: number) => data[row]

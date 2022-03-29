@@ -1,13 +1,13 @@
 // // https://www.uidownload.com/en/vector-miboo
-import * as React from 'react'
 import { useSelector } from 'react-redux'
 import { State } from '../../store'
 
-const SvgComponent = () => {
+const SvgComponent = (props: any) => {
   const state = useSelector((state: State) => state.root.theme.note)
   const cleffState = useSelector((state: State) => state.root.theme.clef)
+
   return (
-    <div style={{ transform: `translateY(1px)` }}>
+    <div style={{ transform: `translateY(1px)` }} className={props.class}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={(34.61 / 116.595) * cleffState.lineSpace * 4.16666667}

@@ -20,6 +20,14 @@ export const addNote = (randNote: NotePositionType[]) => {
     }
 }
 
+export const wrongNote = (randNote: NotePositionType[]) => {
+    return (dispatch: Dispatch<RandNoteAction>) => {
+        dispatch({
+            type: 'wrong',
+            payload: randNote,
+        })
+    }
+}
 // export const changeClefConfig = (clefConfig: ClefConfig) => {
 //     return (dispatch: Dispatch<ClefConfigAction>) => {
 //         dispatch({

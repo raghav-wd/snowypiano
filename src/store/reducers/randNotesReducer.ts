@@ -13,6 +13,10 @@ const reducer =  (state: NotePositionType[] = initialState, action: RandNoteActi
             }
             return notes
         }
+        case "wrong": {
+            state[0] = {...state[0], class: 'animate-[wiggle_0.15s_ease-in]'}
+            return state
+        }
             // return [...state, ...action.payload].splice(Math.max([...state, ...action.payload].length - 12, 0))
         default: {
             return state

@@ -6,6 +6,8 @@ import { data } from '../assets/data/midiNoteToNote'
 export const useMidi = () => {
     const [notePressed, setNotePressed] = useState('')
     const [notePressedUuid, setNotePressedUuid] = useState(uuidv4())
+    const [isKeyDown, setIsKeyDown] = useState(false)
+
     useEffect(() => {
 
         const onMIDISuccess = (midiAccess: any) => {
@@ -41,13 +43,15 @@ export const useMidi = () => {
         const noteOn = (note: number, velocity: number) => {
             // console.log(note, velocity)
             // console.log(midiNoteToNote(note))
+            setIsKeyDown(() => {
+                setNotePressed(() => midiNoteToNote(note))
+                return true
+            })
             setNotePressedUuid(uuidv4())
-            // console.log('he')
-            setNotePressed(midiNoteToNote(note))
         }
 
         const noteOff = (note: number) => {
-            // 
+            setIsKeyDown(false)
         }
 
         const onMIDIFailure = (message: any) => {
@@ -74,5 +78,5 @@ export const useMidi = () => {
         // Establishing midi connection
         navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
     }, [])
-    return [notePressed, notePressedUuid]
+    return [notePressed, notePressedUuid, isKeyDown]
 }

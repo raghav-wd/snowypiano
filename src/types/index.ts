@@ -58,5 +58,6 @@ export type NotePositionType = {
     col: number
     row: number
     uuid: string
+    class: string
 }
 
