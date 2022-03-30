@@ -28,11 +28,3 @@ export const wrongNote = (randNote: NotePositionType[]) => {
         })
     }
 }
-// export const changeClefConfig = (clefConfig: ClefConfig) => {
-//     return (dispatch: Dispatch<ClefConfigAction>) => {
-//         dispatch({
-//             type: ClefConfigActionType.DEFAULT,
-//             payload: clefConfig,
-//         })
-//     }
-// }

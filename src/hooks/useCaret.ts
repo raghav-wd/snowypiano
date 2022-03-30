@@ -19,7 +19,7 @@ export const useCaret = () => {
         console.log(`Caret Note: ${getNote(caretNote.row)}`)
     }, [caretNote])
 
-    useEffect(() => {
+    useEffect(() => { 
         if( isKeyDown && caretNote)
             if(getNote(caretNote.row).charAt(0) == notePressed.charAt(0))
                 addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4(), class: '' }])

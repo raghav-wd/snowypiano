@@ -17,16 +17,10 @@ const reducer =  (state: NotePositionType[] = initialState, action: RandNoteActi
             state[0] = {...state[0], class: 'animate-[wiggle_0.15s_ease-in]'}
             return state
         }
-            // return [...state, ...action.payload].splice(Math.max([...state, ...action.payload].length - 12, 0))
         default: {
             return state
         }
     }
-}
-
-const randomNote = (col: number) => {
-    const row = Math.round(Math.random() * 16)
-    return {row, col}
 }
 
 export default reducer

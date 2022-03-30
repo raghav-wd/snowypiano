@@ -44,13 +44,6 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
       }
       addNote([note])
     }
-    // const n = noteState ? noteState : []
-    // generates random notes
-    // addRandNotes.current = setInterval(
-    //   () => addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4() }]),
-    //   1500,
-    // )
-    // addNote([{ row: 8, col: 0, uuid: uuidv4() }])
   }, [])
   useCaret()
 
