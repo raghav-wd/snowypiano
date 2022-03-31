@@ -2,7 +2,7 @@ import { NotePositionType, RootState } from "../../types";
 
 interface Action {
     type: string,
-    payload: RootState,
+    payload: RootState | string,
 }
 
 interface RandNoteAction {

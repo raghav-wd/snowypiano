@@ -1,29 +1,47 @@
+import { themes, ThemeTitles } from "../../assets/data/themes"
 import { RootState } from "../../types"
 import { Action } from "../actions"
 
-
+const initialTheme = {
+        title: ThemeTitles.Light,
+        primary: 'white',
+        secondary: 'black',
+        tertiary: 'gray',
+        note: 'black',
+        ledger: 'black',
+        cleffLine: 'black',
+        cleff: 'white',
+    }
 const initialState: RootState = {
     theme: {
         id: 1,
-        name: "default",
+        name: initialTheme.title,
+        primary: 'white',
+        secondary: 'black',
+        primaryText: 'black',
+        secondaryText: 'white',
         ledger: {
-            color: "black",
+            color: initialTheme.ledger,
             length: 64,
             thickness: 4,
         },
         note: {
-            color: 'black',
+            color: initialTheme.note,
             size: 48
         },
         clef: {
             size: 0,
             lineSpace: 48,
             lineThinkness: 2,
-            lineColor: 'black',
-            color: 'cyan'
+            color: initialTheme.cleff,
+            lineColor: initialTheme.cleffLine,
         },
         visualizer: {
-            color: 'black',
+            color: initialTheme.primary,
+        },
+        footer: {
+            color: initialTheme.primary,
+            textColor: initialTheme.secondary
         }
     },
     appConfig: {
@@ -39,6 +57,11 @@ const reducer =  (state: RootState = initialState, action: Action) => {
             return state
         case "dark":
             return state
+        case 'changeTheme':
+            {
+                const theme = themes.find(i => i.title == action.payload)
+                return {...state, theme: {...state.theme, primary: theme!.primary, secondary: theme!.secondary, primaryText: theme!.primaryText, secondaryText: theme!.secondaryText, note: {... state.theme.note, color: theme!.note}, clef: {...state.theme.clef, color: theme!.cleff, lineColor: theme!.cleffLine}, footer: {...state.theme.footer, color: theme!.primary}}}
+            }
         default:
             return state
     }

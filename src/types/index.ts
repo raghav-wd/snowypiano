@@ -11,10 +11,21 @@ export type RootState = {
 export type ThemeState = {
     id: number
     name: string
+    primary: string
+    secondary: string
+    // tertiary: string
+    primaryText: string
+    secondaryText: string
     ledger: Ledger
     note: NoteType
     clef: ClefType
     visualizer: Visualizer
+    footer: Footer
+}
+
+export type Footer = {
+    color: string
+    textColor: string
 }
 
 export type AppConfigState = {

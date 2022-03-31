@@ -8,6 +8,7 @@ import { actionCreators, State } from '../store'
 import { NotePositionType, NoteType } from '../types'
 import { v4 as uuidv4 } from 'uuid'
 import { useCaret } from '../hooks/useCaret'
+import { ThemeTitles } from '../assets/data/themes'
 
 type NoteProps = {
   h?: number
@@ -28,10 +29,11 @@ const NoteContainer = styled.div<NoteContainerProps>`
 
 const NoteComp: FunctionComponent<NoteProps> = () => {
   const note = useSelector((state: State) => state.root.theme.note)
+  const root = useSelector((state: State) => state.root)
   const noteState = useSelector((state: State) => state.randNotes)
 
   const dispatch = useDispatch()
-  const { addNote, wrongNote } = bindActionCreators(actionCreators, dispatch)
+  const { addNote, wrongNote, changeTheme } = bindActionCreators(actionCreators, dispatch)
   const addRandNotes: any = useRef()
   useEffect(() => {
     for (let i = 1; i <= 12; i++) {
@@ -43,6 +45,7 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
         class: '',
       }
       addNote([note])
+      // changeTheme(root, ThemeTitles.Dark)
     }
   }, [])
   useCaret()

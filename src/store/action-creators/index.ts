@@ -1,12 +1,13 @@
 import { Dispatch } from "redux"
+import { Theme, themes, ThemeTitles } from "../../assets/data/themes"
 import { NotePositionType, RootState } from "../../types"
 import { Action, RandNoteAction } from "../actions/index"
 
-export const changeTheme = (rootState: RootState) => {
+export const changeTheme = (theme: ThemeTitles) => {
     return (dispatch: Dispatch<Action>) => {
         dispatch({
-            type: 'light',
-            payload: rootState,
+            type: 'changeTheme',
+            payload: theme,
         })
     }
 }

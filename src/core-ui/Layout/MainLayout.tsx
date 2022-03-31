@@ -1,4 +1,9 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { ThemeTitles } from '../../assets/data/themes'
+import { actionCreators, State } from '../../store'
+import { Footer } from '../Footer'
 import Staff from '../Staff'
 
 type MainLayoutProps = {
@@ -6,14 +11,22 @@ type MainLayoutProps = {
   // focusMode: boolean,
 }
 
-export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode }) => (
-  <div className="h-screen flex flex-col">
-    <div className="h-12 bg-slate-100">Head Area</div>
-    <div className={(visualizerMode ? 'h-4/6' : 'h-full') + ' bg-slate-200'}>
-      Staff Area
-      <Staff />
+export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode }) => {
+  const theme = useSelector((state: State) => state.root.theme)
+  return (
+    <div
+      className="h-screen flex flex-col"
+      style={{ backgroundColor: theme.footer.color, color: theme.primaryText }}>
+      <div className="h-12 bg-slate-100" style={{ backgroundColor: 'inherit' }}>
+        Head Area
+      </div>
+      <div className={visualizerMode ? 'h-4/6' : 'h-full'} style={{ backgroundColor: 'inherit' }}>
+        <Staff />
+      </div>
+      <div className={visualizerMode ? 'h-2/6' : 'h-0'} style={{ backgroundColor: 'inherit' }}>
+        Visualizer Area
+      </div>
+      <Footer />
     </div>
-    <div className={(visualizerMode ? 'h-2/6' : 'h-0') + ' bg-slate-300'}>Visualizer Area</div>
-    <div className="h-8 bg-slate-100">Footer Area</div>
-  </div>
-)
+  )
+}
