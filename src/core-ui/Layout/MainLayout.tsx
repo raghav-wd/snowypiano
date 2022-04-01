@@ -5,6 +5,7 @@ import { ThemeTitles } from '../../assets/data/themes'
 import { actionCreators, State } from '../../store'
 import { Footer } from '../Footer'
 import Staff from '../Staff'
+import { JumpDots } from '../Visualizers/JumpDots'
 
 type MainLayoutProps = {
   visualizerMode: boolean
@@ -24,7 +25,7 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
         <Staff />
       </div>
       <div className={visualizerMode ? 'h-2/6' : 'h-0'} style={{ backgroundColor: 'inherit' }}>
-        Visualizer Area
+        <JumpDots />
       </div>
       <Footer />
     </div>
