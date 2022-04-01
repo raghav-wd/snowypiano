@@ -6,6 +6,7 @@ import { actionCreators, State } from '../../../store'
 import styled from 'styled-components'
 import { overlayClass, SettingsContainerClass } from './styles'
 import { ThemeState } from '../../../types'
+import { LayoutTeaser } from '../../../components/LayoutTeaser'
 
 export const Settings = (props: any) => {
   const dispatch = useDispatch()
@@ -34,7 +35,10 @@ export const Settings = (props: any) => {
         <p className="text-center mb-2" style={{ color: theme.secondaryText }}>
           Settings
         </p>
-        <div className="overflow-auto h-full">dskd</div>
+        <div className="overflow-auto h-full flex flex-row gap-x-8  ">
+          <LayoutTeaser isVisualizer={true} title="Full" />
+          <LayoutTeaser isVisualizer={false} title="No Visualizer" />
+        </div>
       </div>
     </Overlay>
   )
