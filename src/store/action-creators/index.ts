@@ -29,3 +29,12 @@ export const wrongNote = (randNote: NotePositionType[]) => {
         })
     }
 }
+
+export const resetClass = () => {
+    return (dispatch: Dispatch<RandNoteAction>) => {
+        dispatch({
+            type: 'resetClass',
+            payload: [],
+        })
+    }
+}

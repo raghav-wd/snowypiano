@@ -10,9 +10,9 @@ export const useCaret = () => {
     const noteState = useSelector((state: State) => state.randNotes)
     const caretNote = noteState![0]
     const dispatch = useDispatch()
-    const { addNote, wrongNote } = bindActionCreators(actionCreators, dispatch)
+    const { addNote, wrongNote, resetClass } = bindActionCreators(actionCreators, dispatch)
 
-    const [notePressed, notePressedUuid, isKeyDown] = useMidi()
+    const [notePressed, isKeyDown] = useMidi()
 
     useEffect(() => {
         if(caretNote)
@@ -24,7 +24,13 @@ export const useCaret = () => {
             if(getNote(caretNote.row).charAt(0) == notePressed.charAt(0))
                 addNote([{ row: Math.round(Math.random() * 16), col: 13, uuid: uuidv4(), class: '' }])
             else
+            {
+                // toggles wiggle class on note
                 wrongNote(noteState)
+                setTimeout(() => {
+                    resetClass()
+                }, 150)
+            }
     }, [isKeyDown])
 }
 

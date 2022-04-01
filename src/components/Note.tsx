@@ -33,8 +33,7 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
   const noteState = useSelector((state: State) => state.randNotes)
 
   const dispatch = useDispatch()
-  const { addNote, wrongNote, changeTheme } = bindActionCreators(actionCreators, dispatch)
-  const addRandNotes: any = useRef()
+  const { addNote } = bindActionCreators(actionCreators, dispatch)
   useEffect(() => {
     for (let i = 1; i <= 12; i++) {
       const uuid = uuidv4()
@@ -45,7 +44,6 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
         class: '',
       }
       addNote([note])
-      // changeTheme(root, ThemeTitles.Dark)
     }
   }, [])
   useCaret()
