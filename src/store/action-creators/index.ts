@@ -38,3 +38,21 @@ export const resetClass = () => {
         })
     }
 }
+
+export const visualizer = () => {
+    return (dispatch: Dispatch<RandNoteAction>) => {
+        dispatch({
+            type: 'visualizer',
+            payload: [],
+        })
+    }
+}
+
+export const setVisualizerNoteStateOn = (index: number) => {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: 'setVisualizerNoteStateOn',
+            payload: index
+        })
+    }
+}

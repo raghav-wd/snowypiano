@@ -2,12 +2,19 @@ import { useEffect, useState } from "react"
 import { MidiConnectionEvent, MidiMessageData, NotePressedState } from "../types/midi"
 import { v4 as uuidv4 } from 'uuid'
 import { data } from '../assets/data/midiNoteToNote'
+import { useDispatch } from "react-redux"
+import { bindActionCreators } from "redux"
+import { actionCreators } from "../store"
 
 export const useMidi = () => {
     const [notePressed, setNotePressed] = useState('')
+    const [noteNumber, setNoteNumber] = useState(0)
     const [notePressedUuid, setNotePressedUuid] = useState(uuidv4())
     const [isKeyDown, setIsKeyDown] = useState(false)
 
+    const dispatch = useDispatch()
+    const { setVisualizerNoteStateOn } = bindActionCreators(actionCreators, dispatch)
+    
     useEffect(() => {
 
         const onMIDISuccess = (midiAccess: any) => {
@@ -47,6 +54,7 @@ export const useMidi = () => {
                 setNotePressed(() => midiNoteToNote(note))
                 return true
             })
+            setVisualizerNoteStateOn(note)
             setNotePressedUuid(uuidv4())
         }
 
@@ -78,5 +86,5 @@ export const useMidi = () => {
         // Establishing midi connection
         navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
     }, [])
-    return [notePressed, notePressedUuid, isKeyDown]
+    return [notePressed, notePressedUuid, isKeyDown, noteNumber]
 }

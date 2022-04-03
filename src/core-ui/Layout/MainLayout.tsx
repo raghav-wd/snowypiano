@@ -24,7 +24,9 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
       <div className={visualizerMode ? 'h-4/6' : 'h-full'} style={{ backgroundColor: 'inherit' }}>
         <Staff />
       </div>
-      <div className={visualizerMode ? 'h-2/6' : 'h-0'} style={{ backgroundColor: 'inherit' }}>
+      <div
+        className={visualizerMode ? 'h-2/6 flex justify-center items-end' : 'h-0'}
+        style={{ backgroundColor: 'inherit' }}>
         <JumpDots />
       </div>
       <Footer />

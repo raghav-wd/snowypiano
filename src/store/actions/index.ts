@@ -2,7 +2,12 @@ import { NotePositionType, RootState } from "../../types";
 
 interface Action {
     type: string,
-    payload: RootState | string,
+    payload: any,
+}
+
+type VisualizerPayload = {
+    index: number
+    isActive: boolean
 }
 
 interface RandNoteAction {
@@ -15,4 +20,4 @@ interface RandNoteAction {
 //     payload: ClefConfig
 // }
 
-export type { Action, RandNoteAction }
+export type { Action, RandNoteAction, VisualizerPayload }

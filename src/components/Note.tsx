@@ -29,7 +29,7 @@ const NoteContainer = styled.div<NoteContainerProps>`
 
 const NoteComp: FunctionComponent<NoteProps> = () => {
   const note = useSelector((state: State) => state.root.theme.note)
-  const root = useSelector((state: State) => state.root)
+  const root = useSelector((state: State) => state.visualizer)
   const noteState = useSelector((state: State) => state.randNotes)
 
   const dispatch = useDispatch()
@@ -45,6 +45,7 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
       }
       addNote([note])
     }
+    console.log(root)
   }, [])
   useCaret()
 
