@@ -56,3 +56,12 @@ export const setVisualizerNoteStateOn = (index: number) => {
         })
     }
 }
+
+export const setVisualizerNoteStateOff = (index: number) => {
+    return (dispatch: Dispatch<Action>) => {
+        dispatch({
+            type: 'setVisualizerNoteStateOff',
+            payload: index
+        })
+    }
+}

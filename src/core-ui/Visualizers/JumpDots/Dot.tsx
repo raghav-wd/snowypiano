@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { State } from '../../../store'
-import { getRandomColor } from '../../../utility/getRandomColor'
 
 type DotProps = {
   color: string
@@ -19,7 +18,7 @@ const DotDiv = styled.div<DotProps>`
 `
 
 export const Dot = (props: any) => {
-  const state = useSelector((state: State) => state.visualizer)
+  const state = useSelector((state: State) => state.visualizerNotes)
   const theme = useSelector((state: State) => state.root.theme)
-  return <DotDiv isActive={state[props.index]} color={theme.note.color} />
+  return <DotDiv isActive={state[props.index].isActive} color={state[props.index].color} />
 }

@@ -13,7 +13,7 @@ export const useMidi = () => {
     const [isKeyDown, setIsKeyDown] = useState(false)
 
     const dispatch = useDispatch()
-    const { setVisualizerNoteStateOn } = bindActionCreators(actionCreators, dispatch)
+    const { setVisualizerNoteStateOn, setVisualizerNoteStateOff } = bindActionCreators(actionCreators, dispatch)
     
     useEffect(() => {
 
@@ -54,12 +54,13 @@ export const useMidi = () => {
                 setNotePressed(() => midiNoteToNote(note))
                 return true
             })
-            setVisualizerNoteStateOn(note)
+            setVisualizerNoteStateOn(note-21)
             setNotePressedUuid(uuidv4())
         }
 
         const noteOff = (note: number) => {
             setIsKeyDown(false)
+            setVisualizerNoteStateOff(note-21)
         }
 
         const onMIDIFailure = (message: any) => {

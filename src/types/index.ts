@@ -37,6 +37,11 @@ export type VisualizerState = {
     visibility: boolean
 }
 
+export type VisualizerNoteState = {
+     color: string
+     isActive: boolean
+}
+
 export type Visualizer = {
     color: string
 }

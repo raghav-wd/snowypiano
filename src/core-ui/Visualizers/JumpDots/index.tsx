@@ -1,8 +1,9 @@
-import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+import { State } from '../../../store'
 import { Dot } from './Dot'
 
 export const JumpDots = () => {
-  // useVisualizer()
+  const state = useSelector((state: State) => state.visualizerNotes)
   return (
     <>
       {[...Array(88)].map((_, i) => (

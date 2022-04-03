@@ -7,7 +7,7 @@ import randNotesReducer from './randNotesReducer'
 export const reducers = combineReducers({
     root: rootReducer,
     randNotes: randNotesReducer,
-    visualizer: visualizerReducer
+    visualizerNotes: visualizerReducer
 })
 
 export type State = ReturnType<typeof reducers>
