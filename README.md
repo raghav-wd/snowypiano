@@ -1,7 +1,9 @@
-# Snowy Piano 
+# Snowy Piano
+
 A clean and cool like snow, customizable staff sheet sight trainer.
 
-# Features - 
+# Features -
+
 - Animatable staff sheet
 - Themes
 - Midi Visualizer
@@ -9,10 +11,12 @@ A clean and cool like snow, customizable staff sheet sight trainer.
 - Live stats
 
 # Contribute
-The project is in its very early phase and yet to be dropped its first release. Anyone who is interested can contribute, feel free to <a href="mailto:raghav.gupta.gpt@gmail.com">reach me</a>
 
-___
-___
+The project is in its very early phase and yet to be dropped its first release. Anyone who is interested can contribute, feel free to reach me <a href="mailto:raghav@snowypiano.com">raghav@snowypiano.com</a>
+
+---
+
+---
 
 # Installation & Set Up 🛠
 
@@ -34,7 +38,7 @@ ___
    npm start
    ```
 
-# Building and Running for Production 🚀 
+# Building and Running for Production 🚀
 
 1. Generate a full static production build
 
