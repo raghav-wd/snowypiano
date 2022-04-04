@@ -12,24 +12,32 @@ export const Footer = () => {
   const footerState = useSelector((state: State) => state.root.theme.footer)
 
   return (
-    <div className="h-8 flex flex-row-reverse px-4" style={{ backgroundColor: footerState.color }}>
-      <span
-        className="px-2"
-        onClick={() => {
-          if (!showThemeList) setShowThemeList(true)
-        }}>
-        <FontAwesomeIcon icon={faBrush} />
-      </span>
-      <a href="https://github.com/raghav-wd/snowypiano" className="px-2">
-        <FontAwesomeIcon icon={faCode} />
-      </a>
-      <span
-        className="px-2"
-        onClick={() => {
-          if (!showSettings) setShowSettings(true)
-        }}>
-        <FontAwesomeIcon icon={faGear} />
-      </span>
+    <div
+      className="h-10 flex flex-row-reverse items-center px-4"
+      style={{ backgroundColor: footerState.color }}>
+      <div>
+        <a
+          className="px-3 link link--1"
+          onClick={() => {
+            if (!showThemeList) setShowThemeList(true)
+          }}>
+          <FontAwesomeIcon icon={faBrush} />
+        </a>
+      </div>
+      <div>
+        <a
+          className="px-3 link link--1"
+          onClick={() => {
+            if (!showSettings) setShowSettings(true)
+          }}>
+          <FontAwesomeIcon icon={faGear} />
+        </a>
+      </div>
+      <div>
+        <a href="https://github.com/raghav-wd/snowypiano" className="px-3 link link--1">
+          <FontAwesomeIcon icon={faCode} />
+        </a>
+      </div>
       {showThemeList ? <ThemeList visibility={setShowThemeList} /> : ''}
       {showSettings ? <Settings visibility={setShowSettings} /> : ''}
     </div>

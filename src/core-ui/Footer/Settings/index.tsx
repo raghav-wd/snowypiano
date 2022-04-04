@@ -35,6 +35,9 @@ export const Settings = (props: any) => {
         <p className="text-center mb-2" style={{ color: theme.secondaryText }}>
           Settings
         </p>
+        <p className="mb-4" style={{ color: theme.secondaryText }}>
+          View mode
+        </p>
         <div className="overflow-auto h-full flex flex-row gap-x-8  ">
           <LayoutTeaser isVisualizer={true} title="Full" />
           <LayoutTeaser isVisualizer={false} title="No Visualizer" />

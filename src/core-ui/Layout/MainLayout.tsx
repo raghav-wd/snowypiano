@@ -18,8 +18,8 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
     <div
       className="h-screen flex flex-col"
       style={{ backgroundColor: theme.footer.color, color: theme.primaryText }}>
-      <div className="h-12 bg-slate-100" style={{ backgroundColor: 'inherit' }}>
-        Head Area
+      <div className="h-12 bg-slate-100 logo pl-4" style={{ backgroundColor: 'inherit' }}>
+        SnowyPiano
       </div>
       <div className={visualizerMode ? 'h-4/6' : 'h-full'} style={{ backgroundColor: 'inherit' }}>
         <Staff />
