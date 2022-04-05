@@ -5,6 +5,7 @@ import { data } from '../assets/data/midiNoteToNote'
 import { useDispatch } from "react-redux"
 import { bindActionCreators } from "redux"
 import { actionCreators } from "../store"
+import { useKeyboard } from "./useKeyboard"
 
 export const useMidi = () => {
     const [notePressed, setNotePressed] = useState('')
@@ -14,6 +15,8 @@ export const useMidi = () => {
 
     const dispatch = useDispatch()
     const { setVisualizerNoteStateOn, setVisualizerNoteStateOff } = bindActionCreators(actionCreators, dispatch)
+    useKeyboard()
+
     
     useEffect(() => {
 
@@ -48,8 +51,6 @@ export const useMidi = () => {
         }
 
         const noteOn = (note: number, velocity: number) => {
-            // console.log(note, velocity)
-            // console.log(midiNoteToNote(note))
             setIsKeyDown(() => {
                 setNotePressed(() => midiNoteToNote(note))
                 return true
@@ -66,7 +67,7 @@ export const useMidi = () => {
         const onMIDIFailure = (message: any) => {
             console.log("Failed to get MIDI access - ", message)
         }
-
+        
         // listen to changes on midi input/output
         const midiInputListener = (e: any) => {
             const midiConnection: MidiConnectionEvent = {
@@ -83,9 +84,9 @@ export const useMidi = () => {
             return Object.keys(data).filter(key => data[key] === note)[0]
         }
 
-
+        
         // Establishing midi connection
         navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
     }, [])
-    return [notePressed, notePressedUuid, isKeyDown, noteNumber]
+    return [notePressed, notePressedUuid, isKeyDown, noteNumber, setNoteNumber]
 }
