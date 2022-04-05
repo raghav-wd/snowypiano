@@ -1,6 +1,6 @@
 export type VisualizerState = {}
 
 export type KeyToNoteNumberType = {
-            key: string
-            noteNumber: number
+  key: string
+  noteNumber: number
 }

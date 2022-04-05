@@ -1,18 +1,18 @@
-import { NotePositionType, RootState } from "../../types";
+import { NotePositionType, RootState } from '../../types'
 
 interface Action {
-    type: string,
-    payload: any,
+  type: string
+  payload: any
 }
 
 type VisualizerPayload = {
-    index: number
-    isActive: boolean
+  index: number
+  isActive: boolean
 }
 
 interface RandNoteAction {
-    type: string,
-    payload: NotePositionType[]
+  type: string
+  payload: NotePositionType[]
 }
 
 // type ClefConfigAction = {

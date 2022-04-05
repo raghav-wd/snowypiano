@@ -34,7 +34,8 @@ const WholeNote: FunctionComponent<WholeNoteProps> = () => {
         viewBox="0 0 720 720"
         width={state.size}
         height={state.size}
-        style={{ transform: `translateY(${cleffState.lineThinkness}px)`, position: 'relative' }}>
+        style={{ transform: `translateY(${cleffState.lineThinkness}px)`, position: 'relative' }}
+      >
         <path
           style={{
             fill: state.color,

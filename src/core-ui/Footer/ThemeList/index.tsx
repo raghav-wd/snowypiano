@@ -40,7 +40,8 @@ export const ThemeList = (props: any) => {
               className="mb-1 p-2"
               key={uuidv4()}
               onClick={() => changeTheme(i.title)}
-              themeState={theme}>
+              themeState={theme}
+            >
               {i.title}
             </ThemeListItem>
           ))}

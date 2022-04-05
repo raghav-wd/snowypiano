@@ -1,18 +1,18 @@
 export type MidiConnectionEvent = {
-    name: string
-    manufacturer: string
-    type: 'input' | 'output'
-    connection: string
-    state: 'connected' | 'disconnected'
+  name: string
+  manufacturer: string
+  type: 'input' | 'output'
+  connection: string
+  state: 'connected' | 'disconnected'
 }
 
 export type MidiMessageData = {
-    command: number
-    note: number
-    velocity: number
+  command: number
+  note: number
+  velocity: number
 }
 
 export type NotePressedState = {
-    note: string
-    uuid: string
+  note: string
+  uuid: string
 }

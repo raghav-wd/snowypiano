@@ -12,7 +12,8 @@ const SvgComponent = (props: any) => {
         xmlns="http://www.w3.org/2000/svg"
         width={(34.61 / 116.595) * cleffState.lineSpace * 4.16666667}
         height={1 * cleffState.lineSpace * 4.16666667}
-        viewBox="0 0 32.447 109.307">
+        viewBox="0 0 32.447 109.307"
+      >
         <path
           style={{
             fill: state.color,

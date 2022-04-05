@@ -14,13 +14,15 @@ export const Footer = () => {
   return (
     <div
       className="h-10 flex flex-row-reverse items-center px-4"
-      style={{ backgroundColor: footerState.color }}>
+      style={{ backgroundColor: footerState.color }}
+    >
       <div>
         <a
           className="px-3 link link--1"
           onClick={() => {
             if (!showThemeList) setShowThemeList(true)
-          }}>
+          }}
+        >
           <FontAwesomeIcon icon={faBrush} />
         </a>
       </div>
@@ -29,7 +31,8 @@ export const Footer = () => {
           className="px-3 link link--1"
           onClick={() => {
             if (!showSettings) setShowSettings(true)
-          }}>
+          }}
+        >
           <FontAwesomeIcon icon={faGear} />
         </a>
       </div>
