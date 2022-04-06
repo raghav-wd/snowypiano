@@ -31,7 +31,7 @@ export const ThemeList = (props: any) => {
   return (
     <Overlay className={overlayClass} onClick={(e) => closeOverlay(e)}>
       <div className={themeListContainerClass} style={{ backgroundColor: theme.secondary }}>
-        <p className="text-center mb-2" style={{ color: theme.secondaryText }}>
+        <p className="text-center mb-2 text-xl" style={{ color: theme.secondaryText }}>
           Themes
         </p>
         <div className="overflow-auto h-full">
@@ -40,8 +40,7 @@ export const ThemeList = (props: any) => {
               className="mb-1 p-2"
               key={uuidv4()}
               onClick={() => changeTheme(i.title)}
-              themeState={theme}
-            >
+              themeState={theme}>
               {i.title}
             </ThemeListItem>
           ))}

@@ -18,9 +18,8 @@ const SettingsContainerClass = [
   'w-3/6',
   'h-4/6',
   'rounded-md',
-  'px-4',
-  'py-2',
-  'pb-12',
+  'p-8',
+  'py-6',
 ].join(' ')
 
 export { overlayClass, SettingsContainerClass }

@@ -17,14 +17,6 @@ export const Settings = (props: any) => {
     background-color: #1a1a1ac7;
   `
 
-  // type SettingsItemProps = {
-  //   themeState: ThemeState
-  // }
-
-  // const SettingsItem = styled.div<SettingsItemProps>`
-  //   color: ${(props) => props.themeState.secondaryText};
-  // `
-
   const closeOverlay = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.target !== e.currentTarget ? '' : props.visibility(false)
   }
@@ -32,15 +24,16 @@ export const Settings = (props: any) => {
   return (
     <Overlay className={overlayClass} onClick={(e) => closeOverlay(e)}>
       <div className={SettingsContainerClass} style={{ backgroundColor: theme.secondary }}>
-        <p className="text-center mb-2" style={{ color: theme.secondaryText }}>
+        <p className="text-center mb-2 text-xl" style={{ color: theme.secondaryText }}>
           Settings
         </p>
         <p className="mb-4" style={{ color: theme.secondaryText }}>
           View mode
         </p>
-        <div className="overflow-auto h-full flex flex-row gap-x-8  ">
-          <LayoutTeaser isVisualizer={true} title="Full" />
-          <LayoutTeaser isVisualizer={false} title="No Visualizer" />
+        <div className="overflow-auto h-full flex flex-row justify-between">
+          <LayoutTeaser title="Full" />
+          <LayoutTeaser hideVisualizer title="No Visualizer" />
+          <LayoutTeaser hideStaff title="No Cleff" />
         </div>
       </div>
     </Overlay>
