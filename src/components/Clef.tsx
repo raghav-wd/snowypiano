@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import TrebleClef from '../assets/notes/TrebleClef'
 import { State } from '../store'
 import { ClefType } from '../types'
 import Note from './Note'
@@ -30,6 +31,7 @@ function Clef() {
   const clefState = useSelector((state: State) => state.root.theme.clef)
   return (
     <ClefLines className="cleffstaff h-4/6">
+      <TrebleClef />
       <Line state={clefState} hide />
       <Line state={clefState} hide />
       <Line state={clefState} />

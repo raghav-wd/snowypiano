@@ -34,7 +34,7 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
   const dispatch = useDispatch()
   const { addNote } = bindActionCreators(actionCreators, dispatch)
   useEffect(() => {
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 2; i <= 12; i++) {
       const uuid = uuidv4()
       const note: NotePositionType = {
         row: Math.round(Math.random() * 16),
