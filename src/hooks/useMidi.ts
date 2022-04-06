@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux'
 import { actionCreators } from '../store'
 import { useKeyboard } from './useKeyboard'
 
+declare const navigator: any
 export const useMidi = () => {
   const [notePressed, setNotePressed] = useState('')
   const [noteNumber, setNoteNumber] = useState(0)
@@ -84,7 +85,8 @@ export const useMidi = () => {
     }
 
     // Establishing midi connection
-    navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
+    if(navigator.permissions)
+      navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
   }, [])
   return [notePressed, notePressedUuid, isKeyDown, noteNumber, setNoteNumber]
 }

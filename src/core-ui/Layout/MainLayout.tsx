@@ -16,9 +16,8 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
   const theme = useSelector((state: State) => state.root.theme)
   return (
     <div
-      className="h-screen flex flex-col"
-      style={{ backgroundColor: theme.footer.color, color: theme.primaryText }}
-    >
+      className="h-screen flex flex-col main-layout"
+      style={{ backgroundColor: theme.footer.color, color: theme.primaryText }}>
       <div className="h-12 bg-slate-100 logo pl-4" style={{ backgroundColor: 'inherit' }}>
         SnowyPiano
       </div>
@@ -27,8 +26,7 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
       </div>
       <div
         className={visualizerMode ? 'h-2/6 flex justify-center items-end' : 'h-0'}
-        style={{ backgroundColor: 'inherit' }}
-      >
+        style={{ backgroundColor: 'inherit' }}>
         <JumpDots />
       </div>
       <Footer />
