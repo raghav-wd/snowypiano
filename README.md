@@ -1,18 +1,18 @@
 # Snowy Piano
 
-A clean and cool like snow, customizable staff sheet sight trainer.
+A clean and cool like snow, fully customizable staff sheet sight trainer for musicians
 
 # Features -
 
 - Animatable staff sheet
 - Themes
-- Midi Visualizer
+- Midi Visualizers
 - Smooth Caret
 - Live stats
 
 # Contribute
 
-The project is in its very early phase and yet to be dropped its first release. Anyone who is interested can contribute, feel free to reach me <a href="mailto:raghav@snowypiano.com">raghav@snowypiano.com</a>
+The project is in its very early phase and yet to be dropped its first release. Anyone who is interested can contribute, feel free to reach me at <a href="mailto:raghav@snowypiano.com">raghav@snowypiano.com</a>
 
 ---
 
