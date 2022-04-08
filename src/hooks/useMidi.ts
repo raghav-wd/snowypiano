@@ -8,11 +8,12 @@ import { actionCreators } from '../store'
 import { useKeyboard } from './useKeyboard'
 
 declare const navigator: any
-export const useMidi = () => {
+export const useMidi = (connection?: boolean) => {
   const [notePressed, setNotePressed] = useState('')
   const [noteNumber, setNoteNumber] = useState(0)
   const [notePressedUuid, setNotePressedUuid] = useState(uuidv4())
   const [isKeyDown, setIsKeyDown] = useState(false)
+  const [midiDevices, setMidiDevices] = useState<any>({})
 
   const dispatch = useDispatch()
   const { setVisualizerNoteStateOn, setVisualizerNoteStateOff } = bindActionCreators(
@@ -78,6 +79,7 @@ export const useMidi = () => {
         state: e.port.state,
       }
       // console.log(midiConnection)
+      setMidiDevices(() => midiConnection)
     }
 
     const midiNoteToNote = (note: number) => {
@@ -87,6 +89,10 @@ export const useMidi = () => {
     // Establishing midi connection
     if(navigator.permissions)
       navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
+
   }, [])
+  // creating different return channel as midiDevice is having some issue when kept with other return states
+  if(connection)
+  return midiDevices
   return [notePressed, notePressedUuid, isKeyDown, noteNumber, setNoteNumber]
 }
