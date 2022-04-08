@@ -7,7 +7,7 @@ const reducer = (state: NotePositionType[] = initialState, action: RandNoteActio
   switch (action.type) {
     case 'light': {
       let notes = [...state, ...action.payload]
-      if (notes.length > 12) {
+      if (notes.length > 11) {
         notes.shift()
         notes = notes.map((noteItem) => ({ ...noteItem, col: noteItem.col - 1 }))
       }
