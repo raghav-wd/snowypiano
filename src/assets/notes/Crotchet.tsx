@@ -10,10 +10,10 @@ const SvgComponent = (props: any) => {
     <div style={{ transform: `translateY(1px)` }} className={props.class}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
+        style={{ transform: 'translateY(-1px)' }} // svg has onset of 1px appx.
         width={(34.61 / 116.595) * cleffState.lineSpace * 4.16666667}
         height={1 * cleffState.lineSpace * 4.16666667}
-        viewBox="0 0 32.447 109.307"
-      >
+        viewBox="0 0 32.447 109.307">
         <path
           style={{
             fill: state.color,

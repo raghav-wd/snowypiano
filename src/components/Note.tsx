@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Crotchet from '../assets/notes/Crotchet'
 import WholeNote from '../assets/notes/WholeNote'
 import { actionCreators, State } from '../store'
-import { NotePositionType, NoteType } from '../types'
+import { ClefType, NotePositionType, NoteType } from '../types'
 import { v4 as uuidv4 } from 'uuid'
 import { useCaret } from '../hooks/useCaret'
 import { ThemeTitles } from '../assets/data/themes'
@@ -18,17 +18,22 @@ type NoteContainerProps = {
   row: number
   col: number
   state: NoteType
+  clef: ClefType
 }
 
 const NoteContainer = styled.div<NoteContainerProps>`
   position: absolute;
-  top: ${(props) => (props.state.size / 2) * props.row + props.row - props.state.size / 2}px;
+  top: ${(props) =>
+    (props.state.size / 2) * props.row +
+    props.clef.lineThinkness * Math.floor((props.row + 2) / 2) -
+    props.state.size / 2}px;
   left: ${(props) => (props.col / 12) * 96}vw;
   transition: 0.3s all;
 `
 
 const NoteComp: FunctionComponent<NoteProps> = () => {
   const note = useSelector((state: State) => state.root.theme.note)
+  const clef = useSelector((state: State) => state.root.theme.clef)
   const noteState = useSelector((state: State) => state.randNotes)
 
   const dispatch = useDispatch()
@@ -51,7 +56,12 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
   return (
     <>
       {noteState!.map((noteItem) => (
-        <NoteContainer row={noteItem.row} col={noteItem.col} state={note} key={noteItem.uuid}>
+        <NoteContainer
+          row={noteItem.row}
+          col={noteItem.col}
+          state={note}
+          key={noteItem.uuid}
+          clef={clef}>
           <Crotchet class={noteItem.class} />
         </NoteContainer>
       ))}
