@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import { overlayClass, SettingsContainerClass } from './styles'
 import { ThemeState } from '../../../types'
 import { LayoutTeaser } from '../../../components/LayoutTeaser'
+import { ClefTeaser } from '../../../components/CleffTeasere'
 
 export const Settings = (props: any) => {
   const dispatch = useDispatch()
@@ -30,10 +31,16 @@ export const Settings = (props: any) => {
         <p className="mb-4" style={{ color: theme.secondaryText }}>
           View mode
         </p>
-        <div className="overflow-auto h-full flex flex-row justify-between">
+        <div className="overflow-auto flex flex-row justify-between">
           <LayoutTeaser title="Full" />
           <LayoutTeaser hideVisualizer title="No Visualizer" />
           <LayoutTeaser hideStaff title="No Cleff" />
+        </div>
+        <p className="mb-4" style={{ color: theme.secondaryText }}>
+          Cleff
+        </p>
+        <div className="flex flex-row">
+          <ClefTeaser />
         </div>
       </div>
     </Overlay>

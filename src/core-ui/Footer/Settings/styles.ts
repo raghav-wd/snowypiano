@@ -17,6 +17,8 @@ const SettingsContainerClass = [
   'mx-auto',
   'w-3/6',
   'h-4/6',
+  'window',
+  'overflow-auto ',
   'rounded-md',
   'p-8',
   'py-6',

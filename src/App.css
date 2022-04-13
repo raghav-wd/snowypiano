@@ -31,7 +31,7 @@
   text-decoration: none;
 }
 
-.link--1::before {
+.link--1.window::before {
   content: '';
   display: block;
   position: absolute;
@@ -73,4 +73,19 @@
   100% {
     bottom: 15px;
   }
+}
+
+/* width */
+.window::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+.window::-webkit-scrollbar-thumb {
+  background: #88888844;
+}
+
+/* Handle on hover */
+.window::-webkit-scrollbar-thumb:hover {
+  background: #88888844;
 }
