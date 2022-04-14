@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { State } from '../../store'
 import { ThemeList } from './ThemeList'
@@ -13,7 +13,11 @@ import {
 import { Settings } from './Settings'
 import { MIDI } from './MIDI'
 
-export const Footer = () => {
+type FooterProps = {
+  height: string
+}
+
+export const Footer: FunctionComponent<FooterProps> = ({ height }) => {
   const [showThemeList, setShowThemeList] = useState(false)
   const [showMIDI, setShowMIDI] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
@@ -21,7 +25,7 @@ export const Footer = () => {
 
   return (
     <div
-      className="h-10 flex flex-row-reverse items-center justify-center px-4"
+      className={`${height} flex flex-row-reverse items-center justify-center px-4`}
       style={{ backgroundColor: footerState.color }}>
       <div className="options border-l-2 border-slate-400 flex flex-row-reverse px-4">
         <div>

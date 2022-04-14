@@ -30,6 +30,10 @@ export type Footer = {
 export type AppConfigState = {
   staff: 0
   visualizer?: 0
+  hideHeader?: boolean
+  hideStaff?: boolean
+  hideVisualizer?: boolean
+  hideFooter?: boolean
 }
 
 export type VisualizerState = {
