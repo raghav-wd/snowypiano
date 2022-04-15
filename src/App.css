@@ -89,3 +89,24 @@
 .window::-webkit-scrollbar-thumb:hover {
   background: #88888844;
 }
+
+.hi {
+  /* background-image: url('../public/assets/textures/cloudy.svg'); */
+  /* background-position: center; */
+  background-size: 100%;
+  /* background-blend-mode:lighten; */
+  /* animation: pulse 1.5s infinite; */
+  /* transition: all 0.15s ease-out; */
+}
+
+@keyframes pulse {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+  background-size: 102%;
+  }
+  100% {
+      background-size: 100%;
+  }
+}

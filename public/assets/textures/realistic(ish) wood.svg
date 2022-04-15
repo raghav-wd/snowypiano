@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%">
+  <defs>
+    <pattern id="planks" width="100%" height="20%" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="1.7"></rect>
+    </pattern>
+    <filter id="grain">
+      <feTurbulence baseFrequency="0.002 0.2" numOctaves="1"></feTurbulence>
+      <feColorMatrix values="-0.7 -2.2 -2.7 4.6 -3 -0.4 5 2.4 2.9 -4.5 -1.1 -3.8 -0.6 -2.8 -0.8 1.3 -3.3 -4.2 -1.5 0.2"></feColorMatrix>
+      <feDiffuseLighting lighting-color="#966F33" surfaceScale="2">
+        <feDistantLight azimuth="45" elevation="45">
+          <!--              <animate attributeName="azimuth" from="0" to="360" dur="2s" repeatCount="indefinite" /> -->
+        </feDistantLight>
+      </feDiffuseLighting>
+    </filter>
+    <filter id="squiggle">
+      <feTurbulence baseFrequency="0.001" type="fractalNoise" numOctaves="1" />
+      <feDisplacementMap in="SourceGraphic" xChannelSelector="R" yChannelSelector="B" scale="23.5" />
+      <feGaussianBlur stdDeviation="0.8" />
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#966F33"></rect>
+  <rect width="100%" height="100%" filter="url(#grain)"></rect>
+  <rect width="100%" height="100%" fill="url(#planks)" filter="url(#squiggle)"></rect>
+</svg>

@@ -19,9 +19,9 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
   // const appConfig = useSelector((state: State) => state.root.appConfig)
   const [hideHeader, hideStaff, hideVisualizer, hideFooter] = useMainLayout()
 
+  const [headerCls, setHeaderCls] = useState('h-10')
   const [staffCls, setStaffCls] = useState('h-4/6')
   const [visualizerCls, setVisualizerCls] = useState('h-2/6')
-  const [headerCls, setHeaderCls] = useState('h-10')
   const [footerCls, setFooterCls] = useState('h-12')
 
   useEffect(() => {
@@ -43,17 +43,19 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
   return (
     <div
       className="h-screen flex flex-col main-layout"
-      style={{ backgroundColor: theme.footer.color, color: theme.primaryText }}>
-      <div className={`${headerCls} bg-slate-100 logo pl-4`} style={{ backgroundColor: 'inherit' }}>
+      style={{
+        backgroundColor: theme.footer.color,
+        color: theme.primaryText,
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/textures/${theme.texture}.svg)`,
+      }}>
+      <div className={`${headerCls} logo pl-4`} style={{ color: theme.logoText }}>
         SnowyPiano
-        <Tracker />
+        {/* <Tracker /> */}
       </div>
-      <div className={staffCls} style={{ backgroundColor: 'inherit' }}>
+      <div className={staffCls}>
         <Staff />
       </div>
-      <div
-        className={visualizerCls + ' flex justify-center items-end'}
-        style={{ backgroundColor: 'inherit' }}>
+      <div className={visualizerCls + ' flex justify-center items-end'}>
         <JumpDots />
       </div>
       <Footer height={footerCls} />

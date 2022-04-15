@@ -44,7 +44,7 @@ export const ThemeList = (props: any) => {
         <div className="overflow-auto h-full">
           {themes.map((i) => (
             <ThemeListItem
-              className="mb-1 p-2"
+              className="mb-1 p-2 cursor-pointer"
               key={uuidv4()}
               onClick={() => changeTheme(i.title)}
               themeState={theme}>

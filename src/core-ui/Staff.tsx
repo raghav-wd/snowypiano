@@ -9,9 +9,7 @@ type ClefProps = {
   state: ClefType
 }
 
-const StaffComp = styled.div<ClefProps>`
-  background-color: ${(props) => props.state.color};
-`
+const StaffComp = styled.div<ClefProps>``
 
 function Staff() {
   const state = useSelector((state: State) => state.root)

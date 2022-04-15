@@ -20,6 +20,7 @@ const initialState: RootState = {
     secondary: 'black',
     primaryText: 'black',
     secondaryText: 'white',
+    // texture: '',
     ledger: {
       color: initialTheme.ledger,
       length: 64,
@@ -68,6 +69,8 @@ const reducer = (state: RootState = initialState, action: Action) => {
           secondary: theme!.secondary,
           primaryText: theme!.primaryText,
           secondaryText: theme!.secondaryText,
+          logoText: theme!.logoText,
+          texture: theme!.texture,
           note: { ...state.theme.note, color: theme!.note },
           clef: { ...state.theme.clef, color: theme!.cleff, lineColor: theme!.cleffLine },
           footer: { ...state.theme.footer, color: theme!.primary },

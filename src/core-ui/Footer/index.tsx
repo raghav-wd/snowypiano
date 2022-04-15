@@ -24,9 +24,7 @@ export const Footer: FunctionComponent<FooterProps> = ({ height }) => {
   const footerState = useSelector((state: State) => state.root.theme.footer)
 
   return (
-    <div
-      className={`${height} flex flex-row-reverse items-center justify-center px-4`}
-      style={{ backgroundColor: footerState.color }}>
+    <div className={`${height} flex flex-row-reverse items-center justify-center px-4`}>
       <div className="options border-l-2 border-slate-400 flex flex-row-reverse px-4">
         <div>
           <a

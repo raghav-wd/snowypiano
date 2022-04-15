@@ -13,7 +13,7 @@ type LineProps = {
 const Line = styled.div<LineProps>`
   box-sizing: border-box;
   border-top: ${(props) => props.state.lineThinkness}px solid
-    ${(props) => (props.hide ? props.state.color : props.state.lineColor)};
+    ${(props) => (props.hide ? 'transparent' : props.state.lineColor)};
   width: 100%;
   margin-bottom: ${(props) => props.state.lineSpace}px;
 `

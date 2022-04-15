@@ -3,6 +3,8 @@ export enum ThemeTitles {
   Dark = 'Dark',
   Blue_Dark = 'Blue_Dark',
   Sakura = 'Sakura',
+  Cloudy = 'Cloudy',
+  Mountains = 'Mountains',
 }
 
 export type Theme = {
@@ -11,6 +13,8 @@ export type Theme = {
   secondary: string
   primaryText: string
   secondaryText: string
+  logoText?: string
+  texture?: string
   tertiary: string
   note: string
   ledger: string
@@ -65,6 +69,34 @@ export const themes: Theme[] = [
     note: '#ff5e7f',
     ledger: '#ff5e7f',
     cleffLine: '#ff5e7f',
+    cleff: '#FFFFFF',
+  },
+  {
+    title: ThemeTitles.Cloudy,
+    primary: '#FFFFFF',
+    secondary: '#FFFFFF',
+    primaryText: '#212121',
+    secondaryText: '#356bb1',
+    logoText: '#FFFFFF',
+    texture: 'cloudy',
+    tertiary: 'gray',
+    note: '#356bb1',
+    ledger: '#356bb1',
+    cleffLine: '#25467c',
+    cleff: '#FFFFFF',
+  },
+  {
+    title: ThemeTitles.Mountains,
+    primary: '#FFFFFF',
+    secondary: '#FFFFFF',
+    primaryText: '#31b387',
+    secondaryText: '#31b387',
+    logoText: '#FFFFFF',
+    texture: 'green_mountains',
+    tertiary: 'gray',
+    note: '#002726',
+    ledger: '#356bb1',
+    cleffLine: '#25467c',
     cleff: '#FFFFFF',
   },
 ]

@@ -15,6 +15,8 @@ export type ThemeState = {
   // tertiary: string
   primaryText: string
   secondaryText: string
+  texture?: string
+  logoText?: string
   ledger: Ledger
   note: NoteType
   clef: ClefType

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="gradient" x2="0" y2="1">
+        <stop/>
+        <stop offset="100%" stop-color="#0000"/>
+    </linearGradient>
+    <filter id="filter">
+        <feComponentTransfer>
+            <feFuncA type="discrete" tableValues="0 0 .17 .33 .5 .67 .83 1 1"/>
+        </feComponentTransfer>
+        <feColorMatrix values="0 0 0 .06 0
+                               0 0 0 .85 .02
+                               0 0 0 .45 .02
+                               0 0 0 0 1" result="s"/>
+        <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="2"/>
+        <feDisplacementMap in="s" scale="99"/>
+    </filter>
+    <rect x="-10%" y="-10%" width="120%" height="120%" fill="url(#gradient)" filter="url(#filter)"/>
+</svg>
