@@ -2,6 +2,7 @@ export enum ThemeTitles {
   Light = 'Light',
   Dark = 'Dark',
   Blue_Dark = 'Blue_Dark',
+  Sakura = 'Sakura',
 }
 
 export type Theme = {
@@ -53,5 +54,17 @@ export const themes: Theme[] = [
     ledger: '#3FC1C9',
     cleffLine: '#3FC1C9',
     cleff: '#364F6B',
+  },
+  {
+    title: ThemeTitles.Sakura,
+    primary: '#FFFFFF',
+    secondary: '#FFFFFF',
+    primaryText: '#ff5e7f',
+    secondaryText: '#ff5e7f',
+    tertiary: 'gray',
+    note: '#ff5e7f',
+    ledger: '#ff5e7f',
+    cleffLine: '#ff5e7f',
+    cleff: '#FFFFFF',
   },
 ]

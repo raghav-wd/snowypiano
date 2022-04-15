@@ -63,6 +63,7 @@ const reducer = (state: RootState = initialState, action: Action) => {
         ...state,
         theme: {
           ...state.theme,
+          name: theme!.title,
           primary: theme!.primary,
           secondary: theme!.secondary,
           primaryText: theme!.primaryText,

@@ -6,6 +6,9 @@ import { actionCreators, State } from '../../../store'
 import styled from 'styled-components'
 import { overlayClass, themeListContainerClass } from './styles'
 import { ThemeState } from '../../../types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { useEffect } from 'react'
 
 export const ThemeList = (props: any) => {
   const dispatch = useDispatch()
@@ -28,6 +31,10 @@ export const ThemeList = (props: any) => {
     e.target !== e.currentTarget ? '' : props.visibility(false)
   }
 
+  useEffect(() => {
+    console.log(theme.name)
+  }, [theme])
+
   return (
     <Overlay className={overlayClass} onClick={(e) => closeOverlay(e)}>
       <div className={themeListContainerClass} style={{ backgroundColor: theme.secondary }}>
@@ -41,7 +48,8 @@ export const ThemeList = (props: any) => {
               key={uuidv4()}
               onClick={() => changeTheme(i.title)}
               themeState={theme}>
-              {i.title}
+              {i.title.replace('_', ' ')}
+              {theme.name == i.title ? <FontAwesomeIcon className="mx-2" icon={faCheck} /> : ''}
             </ThemeListItem>
           ))}
         </div>
