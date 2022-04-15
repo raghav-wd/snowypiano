@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <radialGradient id="gradient">
+        <stop stop-color="#258"/>
+        <stop offset=".25" stop-color="#7cc"/>
+        <stop offset=".4" stop-color="#c51"/>
+        <stop offset=".5"/>
+    </radialGradient>
+    <filter id="filter">
+        <feTurbulence baseFrequency=".2"/>
+        <feColorMatrix values="0 0 0 9 -5
+                               0 0 0 9 -5
+                               0 0 0 9 -5
+                               0 0 0 0 1" result="s"/>
+        <feTurbulence type="fractalNoise" baseFrequency=".01" numOctaves="5"/>
+        <feDisplacementMap in="SourceGraphic" scale="99"/>
+        <feBlend in="s" mode="screen"/>
+    </filter>
+    <circle cx="50%" cy="50%" r="71%" fill="url(#gradient)" filter="url(#filter)"/>
+</svg>

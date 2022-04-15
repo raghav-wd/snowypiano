@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <pattern id="pattern" width="80" height="1" patternUnits="userSpaceOnUse">
+        <circle r="99" fill="#3f812d"/>
+        <path d="M0 0H32V1H0Z" fill="#96c96d"/>
+    </pattern>
+    <filter id="filter">
+        <feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="3"/>
+        <feDisplacementMap in="SourceGraphic" scale="48"/>
+    </filter>
+    <rect x="-10%" y="-10%" width="120%" height="120%" fill="url(#pattern)" filter="url(#filter)"/>
+</svg>
