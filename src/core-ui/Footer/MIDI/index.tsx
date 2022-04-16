@@ -31,12 +31,15 @@ export const MIDI = (props: any) => {
           MIDI Inputs
         </p>
         <div style={{ color: theme.secondaryText }} className="flex justify-between">
-          {midiDevices ? '' : 'No devices found'}
+          {/* {midiDevices && midiDevices ? '' : 'No devices found'} */}
           {midiDevices && midiDevices.name} {midiDevices && midiDevices.type}
           {midiDevices && midiDevices.state == 'connected' ? (
             <FontAwesomeIcon icon={faArrowsRotate} />
           ) : (
-            <FontAwesomeIcon icon={faCircleExclamation} />
+            <>
+              No devices found
+              <FontAwesomeIcon icon={faCircleExclamation} />
+            </>
           )}
         </div>
       </div>

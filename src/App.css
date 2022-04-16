@@ -76,17 +76,17 @@
 }
 
 /* width */
-.window::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
 
 /* Handle */
-.window::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #88888844;
 }
 
 /* Handle on hover */
-.window::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #88888844;
 }
 

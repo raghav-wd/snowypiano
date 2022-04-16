@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { overlayClass, themeListContainerClass } from './styles'
 import { ThemeState } from '../../../types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faImage } from '@fortawesome/free-solid-svg-icons'
 import { useEffect } from 'react'
 
 export const ThemeList = (props: any) => {
@@ -44,11 +44,16 @@ export const ThemeList = (props: any) => {
         <div className="overflow-auto h-full">
           {themes.map((i) => (
             <ThemeListItem
-              className="mb-1 p-2 cursor-pointer"
+              className="mb-1 p-3 px-10 cursor-pointer"
               key={uuidv4()}
               onClick={() => changeTheme(i.title)}
               themeState={theme}>
               {i.title.replace('_', ' ')}
+              {i.texture && i.texture!.length > 0 ? (
+                <FontAwesomeIcon className="mx-2" icon={faImage} />
+              ) : (
+                ''
+              )}
               {theme.name == i.title ? <FontAwesomeIcon className="mx-2" icon={faCheck} /> : ''}
             </ThemeListItem>
           ))}

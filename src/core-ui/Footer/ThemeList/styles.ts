@@ -9,6 +9,7 @@ const overlayClass = [
   'flex',
   'flex-col',
   'justify-center',
+  'window',
 ].join(' ')
 
 const themeListContainerClass = [
@@ -18,7 +19,6 @@ const themeListContainerClass = [
   'w-3/6',
   'h-4/6',
   'rounded-md',
-  'px-10',
   'py-6',
   'pb-12',
 ].join(' ')
