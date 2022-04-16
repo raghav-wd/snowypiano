@@ -42,7 +42,7 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
 
   return (
     <div
-      className="h-screen flex flex-col main-layout"
+      className="h-screen flex flex-col main-layout hi"
       style={{
         backgroundColor: theme.footer.color,
         color: theme.primaryText,

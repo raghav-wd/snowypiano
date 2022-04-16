@@ -92,8 +92,9 @@
 
 .hi {
   /* background-image: url('../public/assets/textures/cloudy.svg'); */
-  /* background-position: center; */
+  background-position: center;
   background-size: 100%;
+  background-repeat: no-repeat;
   /* background-blend-mode:lighten; */
   /* animation: pulse 1.5s infinite; */
   /* transition: all 0.15s ease-out; */
