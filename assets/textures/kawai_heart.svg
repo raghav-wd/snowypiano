@@ -1,0 +1,35 @@
+
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 841.9 595.3" style="enable-background:new 0 0 841.9 595.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F2A4B6;}
+	.st1{fill:#D7E9D4;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#839D80;}
+	.st4{fill:#D68A9E;}
+	.st5{opacity:0.31;fill:url(#SVGID_1_);stroke:url(#SVGID_2_);stroke-miterlimit:10;}
+</style>
+<rect class="st0" width="841.9" height="595.3"/>
+<path class="st1" d="M420.6,239.4c3.8-4.4,7.2-9.6,11.7-13.4c18.3-15.3,44.8-6,50.5,17.2c3.1,12.8,0,24.3-6.1,35.4
+	c-8.9,16.1-21.7,28.7-35.6,40.3c-5.8,4.8-11.9,9.2-18.1,13.6c-0.9,0.6-2.9,0.8-3.7,0.3c-19.7-13.6-37.8-28.9-51-49.2
+	c-6.6-10.1-11.2-20.9-10.3-33.3c0.7-10.1,4.5-18.9,12.6-25.3c13.6-10.8,32.6-8.3,44,5.6C416.9,233.6,418.8,236.8,420.6,239.4z"/>
+<ellipse transform="matrix(0.866 -0.5 0.5 0.866 -56.7693 267.3864)" class="st2" cx="470.6" cy="239.6" rx="4.6" ry="12.3"/>
+<circle class="st3" cx="384.3" cy="266.7" r="3.4"/>
+<circle class="st3" cx="420.9" cy="266.7" r="3.4"/>
+<g>
+	<path class="st4" d="M403.4,278.8c-0.5,0.6-1,0.9-1.5,1.1c-0.5,0.2-1,0.2-1.5,0.2c-0.5,0-0.9-0.2-1.4-0.4c-0.5-0.3-0.9-0.6-1.3-1.3
+		c0.5-0.6,1-0.9,1.5-1.1c0.5-0.2,1-0.2,1.5-0.2c0.5,0,0.9,0.2,1.4,0.4C402.5,277.8,403,278.2,403.4,278.8z"/>
+</g>
+<radialGradient id="SVGID_1_" cx="420.9449" cy="213.6238" r="50.2924" gradientTransform="matrix(1 0 0 0.1582 0 325.9152)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#1E0001;stop-opacity:0.95"/>
+	<stop  offset="1" style="stop-color:#161412;stop-opacity:0"/>
+</radialGradient>
+<radialGradient id="SVGID_2_" cx="420.9449" cy="213.6238" r="50.7924" gradientTransform="matrix(1 0 0 0.5273 0 247.0595)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#1F0000;stop-opacity:0.95"/>
+	<stop  offset="0.2122" style="stop-color:#161412;stop-opacity:0.7484"/>
+	<stop  offset="0.7572" style="stop-color:#1F0000;stop-opacity:0.57"/>
+	<stop  offset="1" style="stop-color:#161412;stop-opacity:0"/>
+</radialGradient>
+<ellipse class="st5" cx="420.9" cy="359.7" rx="50.3" ry="26.5"/>
+</svg>
