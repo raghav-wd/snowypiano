@@ -8,10 +8,10 @@ import { overlayClass, SettingsContainerClass } from './styles'
 import { ThemeState } from '../../../types'
 import { LayoutTeaser } from '../../../components/LayoutTeaser'
 import { ClefTeaser } from '../../../components/CleffTeasere'
+import { useEffect } from 'react'
+import { LayoutActionType } from '../../../store/action-types'
 
 export const Settings = (props: any) => {
-  const dispatch = useDispatch()
-  const { changeTheme } = bindActionCreators(actionCreators, dispatch)
   const theme = useSelector((state: State) => state.root.theme)
 
   const Overlay = styled.div`
@@ -32,9 +32,13 @@ export const Settings = (props: any) => {
           View mode
         </p>
         <div className="overflow-auto flex flex-row justify-between">
-          <LayoutTeaser title="Full" />
-          <LayoutTeaser hideVisualizer title="No Visualizer" />
-          <LayoutTeaser hideStaff title="No Cleff" />
+          <LayoutTeaser mode={LayoutActionType.showAll} title="Full" />
+          <LayoutTeaser
+            mode={LayoutActionType.hideVisualizer}
+            hideVisualizer
+            title="No Visualizer"
+          />
+          <LayoutTeaser mode={LayoutActionType.hideStaff} hideStaff title="No Cleff" />
         </div>
         <p className="mb-4" style={{ color: theme.secondaryText }}>
           Cleff

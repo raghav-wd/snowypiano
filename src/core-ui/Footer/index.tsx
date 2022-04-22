@@ -31,7 +31,8 @@ export const Footer: FunctionComponent<FooterProps> = ({ height }) => {
             className="px-3 link link--1 font-bold cursor-pointer"
             onClick={() => {
               if (!showThemeList) setShowMIDI(true)
-            }}>
+            }}
+          >
             MIDI
           </a>
         </div>
@@ -40,7 +41,8 @@ export const Footer: FunctionComponent<FooterProps> = ({ height }) => {
             className="px-3 link link--1 cursor-pointer"
             onClick={() => {
               if (!showThemeList) setShowThemeList(true)
-            }}>
+            }}
+          >
             <FontAwesomeIcon icon={faBrush} />
           </a>
         </div>
@@ -49,7 +51,8 @@ export const Footer: FunctionComponent<FooterProps> = ({ height }) => {
             className="px-3 link link--1 cursor-pointer"
             onClick={() => {
               if (!showSettings) setShowSettings(true)
-            }}>
+            }}
+          >
             <FontAwesomeIcon icon={faGear} />
           </a>
         </div>

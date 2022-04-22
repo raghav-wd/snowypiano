@@ -21,13 +21,16 @@ export const Window = (props: any) => {
           backgroundImage: `url(assets/images/piano.jpg)`,
           backgroundOrigin: 'cover',
           backgroundPosition: 'center',
-        }}>
+        }}
+      >
         <div
           className={SettingsContainerClass}
-          style={{ backgroundColor: theme.secondary, opacity: 0.75 }}>
+          style={{ backgroundColor: theme.secondary, opacity: 0.75 }}
+        >
           <p
             className="text-center mb-4"
-            style={{ color: theme.secondaryText, fontSize: '20px', textDecoration: 'underline' }}>
+            style={{ color: theme.secondaryText, fontSize: '20px', textDecoration: 'underline' }}
+          >
             Snowy Piano
           </p>
           <p className="text-center mb-2" style={{ color: theme.secondaryText }}>

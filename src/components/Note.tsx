@@ -61,7 +61,8 @@ const NoteComp: FunctionComponent<NoteProps> = () => {
           col={noteItem.col}
           state={note}
           key={noteItem.uuid}
-          clef={clef}>
+          clef={clef}
+        >
           <Crotchet class={noteItem.class} />
         </NoteContainer>
       ))}

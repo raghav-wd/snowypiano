@@ -13,7 +13,8 @@ const TrebleClef = () => {
         height: 0.9 * (clefState.lineSpace + clefState.lineThinkness) * 8 + 'px',
         position: 'absolute',
         top: '28px',
-      }}>
+      }}
+    >
       <path
         // stroke={themeState.note.color}
         fill={themeState.note.color}

@@ -1,4 +1,5 @@
-import { NotePositionType, RootState } from '../../types'
+import { LayoutStateType, NotePositionType, RootState } from '../../types'
+import { LayoutActionType } from '../action-types'
 
 interface Action {
   type: string
@@ -15,9 +16,9 @@ interface RandNoteAction {
   payload: NotePositionType[]
 }
 
-// type ClefConfigAction = {
-//     type: string,
-//     payload: ClefConfig
-// }
+interface LayoutAction {
+  type: LayoutActionType
+  payload: boolean
+}
 
-export type { Action, RandNoteAction, VisualizerPayload }
+export type { Action, RandNoteAction, VisualizerPayload, LayoutAction }

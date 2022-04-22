@@ -42,21 +42,24 @@ export const ThemeList = (props: any) => {
           Themes
         </p>
         <div className="overflow-auto h-full">
-          {themes.map((i) => (
-            <ThemeListItem
-              className="mb-1 p-3 px-10 cursor-pointer"
-              key={uuidv4()}
-              onClick={() => changeTheme(i.title)}
-              themeState={theme}>
-              {i.title.replace('_', ' ')}
-              {i.texture && i.texture!.length > 0 ? (
-                <FontAwesomeIcon className="mx-2" icon={faImage} />
-              ) : (
-                ''
-              )}
-              {theme.name == i.title ? <FontAwesomeIcon className="mx-2" icon={faCheck} /> : ''}
-            </ThemeListItem>
-          ))}
+          {themes
+            // .sort((a, b) => a.title.charAt(0).localeCompare(b.title.charAt(0)))
+            .map((i) => (
+              <ThemeListItem
+                className="mb-1 p-3 px-10 cursor-pointer"
+                key={uuidv4()}
+                onClick={() => changeTheme(i.title)}
+                themeState={theme}
+              >
+                {i.title.replace('_', ' ')}
+                {i.texture && i.texture!.length > 0 ? (
+                  <FontAwesomeIcon className="mx-2" icon={faImage} />
+                ) : (
+                  ''
+                )}
+                {theme.name == i.title ? <FontAwesomeIcon className="mx-2" icon={faCheck} /> : ''}
+              </ThemeListItem>
+            ))}
         </div>
       </div>
     </Overlay>

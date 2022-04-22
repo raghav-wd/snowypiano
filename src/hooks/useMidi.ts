@@ -87,12 +87,9 @@ export const useMidi = (connection?: boolean) => {
     }
 
     // Establishing midi connection
-    if(navigator.permissions)
-      navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
-
+    if (navigator.permissions) navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
   }, [])
   // creating different return channel as midiDevice is having some issue when kept with other return states
-  if(connection)
-  return midiDevices
+  if (connection) return midiDevices
   return [notePressed, notePressedUuid, isKeyDown, noteNumber, setNoteNumber]
 }

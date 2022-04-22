@@ -1,6 +1,8 @@
 // export * from './state'
 // export * from './notation'
 
+import { LayoutActionType } from '../store/action-types'
+
 export type RootState = {
   theme: ThemeState
   appConfig: AppConfigState
@@ -45,6 +47,14 @@ export type VisualizerState = {
 export type VisualizerNoteState = {
   color: string
   isActive: boolean
+}
+
+export type LayoutStateType = {
+  mode: LayoutActionType
+  header: boolean
+  staff: boolean
+  visualizer: boolean
+  footer: boolean
 }
 
 export type Visualizer = {

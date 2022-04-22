@@ -1,7 +1,8 @@
 import { Dispatch } from 'redux'
 import { Theme, themes, ThemeTitles } from '../../assets/data/themes'
-import { NotePositionType, RootState } from '../../types'
-import { Action, RandNoteAction } from '../actions/index'
+import { LayoutStateType, NotePositionType, RootState } from '../../types'
+import { LayoutActionType } from '../action-types'
+import { Action, LayoutAction, RandNoteAction } from '../actions/index'
 
 export const changeTheme = (theme: ThemeTitles) => {
   return (dispatch: Dispatch<Action>) => {
@@ -61,6 +62,33 @@ export const setVisualizerNoteStateOff = (index: number) => {
   return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: 'setVisualizerNoteStateOff',
+      payload: index,
+    })
+  }
+}
+
+export const setHideVisualizer = (index: boolean) => {
+  return (dispatch: Dispatch<LayoutAction>) => {
+    dispatch({
+      type: LayoutActionType.hideVisualizer,
+      payload: index,
+    })
+  }
+}
+
+export const setHideStaff = (index: boolean) => {
+  return (dispatch: Dispatch<LayoutAction>) => {
+    dispatch({
+      type: LayoutActionType.hideStaff,
+      payload: index,
+    })
+  }
+}
+
+export const setShowAll = (index: boolean) => {
+  return (dispatch: Dispatch<LayoutAction>) => {
+    dispatch({
+      type: LayoutActionType.showAll,
       payload: index,
     })
   }

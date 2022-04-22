@@ -105,9 +105,9 @@
     background-size: 100%;
   }
   50% {
-  background-size: 102%;
+    background-size: 102%;
   }
   100% {
-      background-size: 100%;
+    background-size: 100%;
   }
 }

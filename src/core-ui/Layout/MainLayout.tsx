@@ -17,7 +17,7 @@ type MainLayoutProps = {
 export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode }) => {
   const theme = useSelector((state: State) => state.root.theme)
   // const appConfig = useSelector((state: State) => state.root.appConfig)
-  const [hideHeader, hideStaff, hideVisualizer, hideFooter] = useMainLayout()
+  const layoutState = useSelector((state: State) => state.layout)
 
   const [headerCls, setHeaderCls] = useState('h-10')
   const [staffCls, setStaffCls] = useState('h-4/6')
@@ -26,19 +26,22 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
 
   useEffect(() => {
     // determing sizing for teaser layout based on hidden properties
-    if (hideStaff) {
+    if (layoutState.staff) {
       setStaffCls('hidden')
       setVisualizerCls('h-full')
-    } else if (hideVisualizer) {
+    } else if (layoutState.visualizer) {
       setVisualizerCls('hidden')
       setStaffCls('h-full')
-    } else if (hideFooter) {
+    } else if (layoutState.footer) {
       setFooterCls('hidden')
-    } else if (hideHeader) {
+    } else if (layoutState.header) {
       setStaffCls('h-5/6')
       setHeaderCls('hidden')
+    } else {
+      setStaffCls('h-4/6')
+      setVisualizerCls('h-2/6')
     }
-  }, [hideHeader, hideStaff, hideVisualizer, hideFooter])
+  }, [layoutState.staff, layoutState.visualizer])
 
   return (
     <div
@@ -47,7 +50,8 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
         backgroundColor: theme.footer.color,
         color: theme.primaryText,
         backgroundImage: `url(${process.env.PUBLIC_URL}/assets/textures/${theme.texture}.svg)`,
-      }}>
+      }}
+    >
       <div className={`${headerCls} logo pl-4`} style={{ color: theme.logoText }}>
         SnowyPiano
         {/* <Tracker /> */}

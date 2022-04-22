@@ -9,7 +9,7 @@ const overlayClass = [
   'flex',
   'flex-col',
   'justify-center',
-  'bg-gradient-to-r from-cyan-500 to-blue-500'
+  'bg-gradient-to-r from-cyan-500 to-blue-500',
 ].join(' ')
 
 const SettingsContainerClass = [

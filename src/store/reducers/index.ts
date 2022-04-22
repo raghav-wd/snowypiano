@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux'
 // import clefReducer from "./clefReducer"
+import randNotesReducer from './randNotesReducer'
+import layoutReducer from './layoutReducer'
 import rootReducer from './rootReducer'
 import visualizerReducer from './visualizerReducer'
-import randNotesReducer from './randNotesReducer'
 
 export const reducers = combineReducers({
-  root: rootReducer,
+  layout: layoutReducer,
   randNotes: randNotesReducer,
+  root: rootReducer,
   visualizerNotes: visualizerReducer,
 })
 

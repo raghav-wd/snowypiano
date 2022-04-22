@@ -20,7 +20,8 @@ const TrebleClef = () => {
         fillRule: 'evenodd',
       }}
       viewBox="0 0 8268 11692"
-      id="svg2">
+      id="svg2"
+    >
       <defs id="defs4">
         <style type="text/css" id="style6">
           {'.str1{stroke:inherit;stroke-width:42}.fil1{fill:none}'}
