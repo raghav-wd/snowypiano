@@ -62,7 +62,7 @@ export const LayoutTeaser = (props: any) => {
         }}
       >
         {props.title}
-        {props.mode == layoutState.mode ? <FontAwesomeIcon icon={faCheck} className="ml-2" /> : ''}
+        {props.mode == layoutState.mode && <FontAwesomeIcon icon={faCheck} className="ml-2" />}
       </p>
       <LayoutDiv className="w-48 p-2">
         <Header
