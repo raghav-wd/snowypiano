@@ -19,7 +19,8 @@ export enum ThemeTitles {
   Pink_Tree = 'Pink Tree',
   Pattern = 'Pattern',
   Trendy_Abstract_Arts = 'Trendy Abstract Arts',
-  Kawai_Heart = 'Kawai Heart'
+  Kawai_Heart = 'Kawai Heart',
+  Cyberspace = 'Cyberspace',
 }
 
 export type Theme = {
@@ -289,6 +290,18 @@ export const themes: Theme[] = [
     note: '#515151',
     ledger: '#356bb1',
     cleffLine: '#212121',
+    cleff: '#FFFFFF',
+  },
+  {
+    title: ThemeTitles.Cyberspace,
+    primary: '#181c18',
+    secondary: '#404540',
+    primaryText: '#515151',
+    secondaryText: '#00ce7c',
+    tertiary: 'gray',
+    note: '#00ce7c',
+    ledger: '#356bb1',
+    cleffLine: '#008550',
     cleff: '#FFFFFF',
   },
 ]
