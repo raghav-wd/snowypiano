@@ -1,8 +1,8 @@
 import { Dispatch } from 'redux'
 import { Theme, themes, ThemeTitles } from '../../assets/data/themes'
-import { LayoutStateType, NotePositionType, RootState } from '../../types'
-import { LayoutActionType } from '../action-types'
-import { Action, LayoutAction, RandNoteAction } from '../actions/index'
+import { LayoutStateType, NotePositionType, NoteLog, RootState } from '../../types'
+import { LayoutActionType, TrackerActionType } from '../action-types'
+import { Action, LayoutAction, RandNoteAction, TrackerAction } from '../actions/index'
 
 export const changeTheme = (theme: ThemeTitles) => {
   return (dispatch: Dispatch<Action>) => {
@@ -89,6 +89,15 @@ export const setShowAll = (index: boolean) => {
   return (dispatch: Dispatch<LayoutAction>) => {
     dispatch({
       type: LayoutActionType.showAll,
+      payload: index,
+    })
+  }
+}
+
+export const log = (index: NoteLog) => {
+  return (dispatch: Dispatch<TrackerAction>) => {
+    dispatch({
+      type: TrackerActionType.log,
       payload: index,
     })
   }

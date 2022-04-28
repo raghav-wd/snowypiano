@@ -50,16 +50,15 @@ export const MainLayout: FunctionComponent<MainLayoutProps> = ({ visualizerMode 
         backgroundColor: theme.footer.color,
         color: theme.primaryText,
         backgroundImage: `url(${process.env.PUBLIC_URL}/assets/textures/${theme.texture}.svg)`,
-      }}
-    >
+      }}>
       <div className={`${headerCls} logo pl-4`} style={{ color: theme.logoText }}>
         SnowyPiano
-        {/* <Tracker /> */}
       </div>
       <div className={staffCls}>
         <Staff />
       </div>
       <div className={visualizerCls + ' flex justify-center items-end'}>
+        <Tracker />
         <JumpDots />
       </div>
       <Footer height={footerCls} />

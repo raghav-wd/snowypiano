@@ -1,5 +1,5 @@
-import { LayoutStateType, NotePositionType, RootState } from '../../types'
-import { LayoutActionType } from '../action-types'
+import { NoteLog, NotePositionType } from '../../types'
+import { LayoutActionType, TrackerActionType } from '../action-types'
 
 interface Action {
   type: string
@@ -21,4 +21,9 @@ interface LayoutAction {
   payload: boolean
 }
 
-export type { Action, RandNoteAction, VisualizerPayload, LayoutAction }
+interface TrackerAction {
+  type: TrackerActionType
+  payload: NoteLog
+}
+
+export type { Action, RandNoteAction, VisualizerPayload, LayoutAction, TrackerAction }

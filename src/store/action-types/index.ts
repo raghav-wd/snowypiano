@@ -8,3 +8,7 @@ export enum LayoutActionType {
   hideVisualizer,
   showAll,
 }
+
+export enum TrackerActionType {
+  log = 'log',
+}

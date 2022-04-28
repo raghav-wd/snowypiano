@@ -57,6 +57,18 @@ export type LayoutStateType = {
   footer: boolean
 }
 
+export type TrackerState = {
+  misses: number
+  hits: number
+  history?: NoteLog[]
+}
+
+export type NoteLog = {
+  hit: boolean // played correctly or not
+  note: string
+  noteNumber: number
+}
+
 export type Visualizer = {
   color: string
 }
