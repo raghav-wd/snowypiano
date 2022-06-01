@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRotateRight } from '@fortawesome/free-solid-svg-icons'
-import { State } from '../../store'
-import { useSelector } from 'react-redux'
 
 export const Tracker = () => {
   const Container = styled.div`
@@ -12,8 +10,6 @@ export const Tracker = () => {
     font-family: Arial, Helvetica, sans-serif;
     top: 60%;
   `
-  const trackerState = useSelector((state: State) => state.tracker)
-
   return (
     <Container className="flex flex-col-reverse text-center border border-sky-400 px-2 py-4 absolute left-6">
       <div>
@@ -21,11 +17,11 @@ export const Tracker = () => {
       </div>
       <div className="my-4">
         <div>Hits</div>
-        <div>{trackerState.hits}</div>
+        <div>123</div>
       </div>
       <div className="my-4">
         <div>Misses</div>
-        <div>{trackerState.misses}</div>
+        <div>2</div>
       </div>
     </Container>
   )

@@ -3,14 +3,12 @@ import { combineReducers } from 'redux'
 import randNotesReducer from './randNotesReducer'
 import layoutReducer from './layoutReducer'
 import rootReducer from './rootReducer'
-import trackerReducer from './trackerReducer'
 import visualizerReducer from './visualizerReducer'
 
 export const reducers = combineReducers({
   layout: layoutReducer,
   randNotes: randNotesReducer,
   root: rootReducer,
-  tracker: trackerReducer,
   visualizerNotes: visualizerReducer,
 })
 
