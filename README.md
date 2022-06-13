@@ -1,6 +1,6 @@
 # Snowy Piano
 
-A clean and cool like snow, fully customizable staff sheet sight trainer for musicians
+A clean and cool like snow, fully customizable staff sheet sight trainer for musicians.
 
 # Features -
 
